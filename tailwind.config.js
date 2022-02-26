@@ -3,5 +3,11 @@ module.exports = {
   theme: {
     extend: {},
   },
+  variants: {
+    extend: {
+      animation: ["hover", "group-hover", "focus"],
+      display: ["group-hover"],
+    },
+  },
   plugins: [],
 };

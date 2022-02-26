@@ -1,22 +1,31 @@
 import React from "react";
 import Link from "next/link";
+import { navContent } from "../content/navContent";
 
-const Nav: React.FC = () => {
-  const navItems = [
-    { path: "/", title: "Projects" },
-    { path: "/about", title: "About" },
-    { path: "/contact", title: "Contact" },
-  ];
+interface INavProps {
+  navExpand: boolean;
+}
+
+const Nav: React.FC<INavProps> = ({ navExpand }) => {
   return (
     <>
-      <nav className="text-lg flex-col justify-center items-center text-center">
-        {navItems.map(({ path, title }) => {
+      <nav className="text-lg flex-col">
+        {navContent.map(({ path, title, svg }) => {
           return (
-            <div className="p-3 py-5 my-3 hover:bg-slate-500">
-              <Link href={path}>
-                <a>{title}</a>
-              </Link>
-            </div>
+            <>
+              <div className="flex align-middle items-center hover:bg-slate-300">
+                <span className="px-1 my-3 ">{svg}</span>
+                <span
+                  className={`${
+                    navExpand ? "visible p-4 ease-in-out duration-700" : "invisible"
+                  }`}
+                >
+                  <Link href={path}>
+                    <a>{title}</a>
+                  </Link>
+                </span>
+              </div>
+            </>
           );
         })}
       </nav>
