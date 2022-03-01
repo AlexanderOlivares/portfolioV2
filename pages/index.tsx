@@ -1,54 +1,27 @@
 import React, { useState } from "react";
 import Layout from "../components/Layout";
 import Nav from "../components/Nav";
-import MobileNav from "../components/mobileNav";
+import MobileNav from "../components/MobileNav";
 
 const IndexPage = () => {
   const [navExpand, setNavExpand] = useState<boolean>(false);
-  const [showMobileNav, setShowMobileNav] = useState<boolean>(false);
-
-  const displayMobileNav = () => setShowMobileNav(!showMobileNav);
 
   const animateNav = () => {
     setTimeout(() => {
       setNavExpand(!navExpand);
     }, 200);
   };
+
   return (
     <>
-      <Layout title="Home | Next.js + TypeScript Example">
+      <Layout title="Alex Olivares Portfolio">
         <div className="relative min-h-screen md:flex">
-          <div className="p-1 bg-zinc-500 text-gray-100 flex md:hidden">
-            <button
-              id="dropdownButton"
-              className="mobile-menu-button p-4 focus:outline-none focus:bg-slate-300"
-              data-dropdown-toggle="dropdown"
-              type="button"
-              onClick={displayMobileNav}
-            >
-              <svg
-                className="h-9 w-9"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              </svg>
-            </button>
-            <a
-              href="#"
-              className="block p-4 text-3xl text-white font-bold justify-self-end"
-            >
+          <div className="p-1 bg-zinc-500 text-gray-100 flex md:hidden h-16">
+            <MobileNav navExpand={navExpand} setNavExpand={setNavExpand} />
+            <div className="relative text-3xl w-full text-center mt-2">
               Alex Olivares
-            </a>
+            </div>
           </div>
-          {showMobileNav && <MobileNav />}
           <div
             onMouseEnter={animateNav}
             onMouseLeave={() => setNavExpand(false)}

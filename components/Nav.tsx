@@ -10,22 +10,23 @@ const Nav: React.FC<INavProps> = ({ navExpand }) => {
   return (
     <>
       <nav className="text-lg flex-col">
-        {navContent.map(({ path, title, svg }) => {
+        {navContent.map(({ path, title, icon }) => {
           return (
-            <>
-              <div className="flex align-middle items-center hover:bg-slate-300">
-                <span className="px-1 my-3 ">{svg}</span>
-                <span
-                  className={`${
-                    navExpand ? "visible p-4 ease-in-out duration-700" : "invisible"
-                  }`}
-                >
-                  <Link href={path}>
-                    <a>{title}</a>
-                  </Link>
-                </span>
-              </div>
-            </>
+            <div
+              key={title}
+              className="flex align-middle items-center hover:bg-slate-300"
+            >
+              <span className="px-2 my-3 ">{icon}</span>
+              <span
+                className={
+                  navExpand ? "visible p-4 ease-in-out duration-700" : "invisible"
+                }
+              >
+                <Link href={path}>
+                  <a className="text-2xl">{title}</a>
+                </Link>
+              </span>
+            </div>
           );
         })}
       </nav>

@@ -1,7 +1,5 @@
 import React, { ReactNode } from "react";
-import Link from "next/link";
 import Head from "next/head";
-import Nav from "./Nav";
 
 type Props = {
   children?: ReactNode;
@@ -18,7 +16,7 @@ const Layout = ({ children, title = "This is the default title" }: Props) => (
     {children}
     <footer>
       <hr />
-      <span>I'm here to stay (Footer)</span>
+      <span>Alex Olivares 2022</span>
     </footer>
   </div>
 );
