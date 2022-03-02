@@ -21,7 +21,7 @@ const MobileNav: React.FC<IMoblieNavProps> = ({ navExpand, setNavExpand }) => {
     <Menu>
       <Menu.Button>
         <div
-          className={`px-4 ${animateMenuIcon && "animate-menuIconOpen"}`}
+          className={`mx-4 mt-4 -mb-3 ${animateMenuIcon && "animate-menuIconOpen"}`}
           onClick={handleKebabClick}
           onAnimationEnd={() => setAnimateMenuIcon(false)}
         >
@@ -40,15 +40,15 @@ const MobileNav: React.FC<IMoblieNavProps> = ({ navExpand, setNavExpand }) => {
         leaveFrom="transform scale-100 opacity-100"
         leaveTo="transform scale-95 opacity-0"
       >
-        <div className="bg-zinc-500 fixed -mx-20 mt-14">
+        <div className="w-full h-screen bg-emerald text-tan rounded-md">
           <Menu.Items>
             {navContent.map(({ path, title, icon }) => {
               return (
                 <Menu.Item key={title}>
-                  <div className="flex px-5 align-middle items-center hover:bg-slate-300">
+                  <div className="w-3/4 h-1/6 flex my-5 align-middle items-center hover:bg-slate-300">
                     <span className="px-2 my-3 ">{icon}</span>
                     <Link href={path}>
-                      <a className={`block m-2 text-3xl`}>{title}</a>
+                      <a className={`block m-2 text-5xl`}>{title}</a>
                     </Link>
                   </div>
                 </Menu.Item>

@@ -14,12 +14,12 @@ const Nav: React.FC<INavProps> = ({ navExpand }) => {
           return (
             <div
               key={title}
-              className="flex align-middle items-center hover:bg-slate-300"
+              className="flex align-middle items-center hover:border-y-2 border-solid border-emerald"
             >
-              <span className="px-2 my-3 ">{icon}</span>
+              <span className="px-2 my-4">{icon}</span>
               <span
                 className={
-                  navExpand ? "visible p-4 ease-in-out duration-700" : "invisible"
+                  navExpand ? "visible px-4 ease-in-out duration-700" : "invisible"
                 }
               >
                 <Link href={path}>

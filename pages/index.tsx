@@ -15,17 +15,18 @@ const IndexPage = () => {
   return (
     <>
       <Layout title="Alex Olivares Portfolio">
-        <div className="relative min-h-screen md:flex">
-          <div className="p-1 bg-zinc-500 text-gray-100 flex md:hidden h-16">
+        <div className="relative min-h-screen md:flex:col">
+          {/* <div className="p-1 flex md:hidden h-16"> */}
+          <div className="p-1 md:hidden">
             <MobileNav navExpand={navExpand} setNavExpand={setNavExpand} />
-            <div className="relative text-3xl w-full text-center mt-2">
+            {/* <div className="relative text-3xl w-full text-center mt-2">
               Alex Olivares
-            </div>
+            </div> */}
           </div>
           <div
             onMouseEnter={animateNav}
             onMouseLeave={() => setNavExpand(false)}
-            className="hidden md:block md:bg-zinc-500 w-12 h-screen pt-6 absoulte inset-y-0 left-0 hover:w-40 ease-in-out duration-300"
+            className="hidden md:block border-r-2 border-emerald w-12 h-screen pt-48 absoulte inset-y-0 left-0 hover:w-40 ease-in-out duration-300"
           >
             <Nav navExpand={navExpand} />
           </div>
