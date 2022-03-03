@@ -9,12 +9,12 @@ interface INavProps {
 const Nav: React.FC<INavProps> = ({ navExpand }) => {
   return (
     <>
-      <nav className="text-lg flex-col">
+      <nav className="text-lg flex-col text-tan">
         {navContent.map(({ path, title, icon }) => {
           return (
             <div
               key={title}
-              className="flex align-middle items-center hover:border-y-2 border-solid border-emerald"
+              className="flex align-middle items-center border-y-2 border-emerald hover:border-y-2 border-solid hover:border-tan"
             >
               <span className="px-2 my-4">{icon}</span>
               <span

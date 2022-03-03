@@ -11,42 +11,49 @@ interface IMoblieNavProps {
 
 const MobileNav: React.FC<IMoblieNavProps> = ({ navExpand, setNavExpand }) => {
   const [animateMenuIcon, setAnimateMenuIcon] = useState<boolean>(false);
+  const [matchMenuBarColor, setMatchMenuBarColor] = useState<boolean>(false);
   console.log(navExpand);
   const handleKebabClick = () => {
+    setMatchMenuBarColor(!matchMenuBarColor);
     setNavExpand(!navExpand);
     setAnimateMenuIcon(true);
   };
 
   return (
     <Menu>
-      <Menu.Button>
-        <div
-          className={`mx-4 mt-4 -mb-3 ${animateMenuIcon && "animate-menuIconOpen"}`}
-          onClick={handleKebabClick}
-          onAnimationEnd={() => setAnimateMenuIcon(false)}
-        >
-          {navExpand ? (
-            <GoKebabVertical size={36} />
-          ) : (
-            <GoKebabHorizontal size={36} />
-          )}
-        </div>
-      </Menu.Button>
+      <div className="bg-tan pb-2">
+        {/* <div className={`${matchMenuBarColor ? "bg-emerald" : "bg-tan"}`}> */}
+        <Menu.Button>
+          <div
+            className={`bg-tan mx-6 mt-4 rounded-full ${
+              animateMenuIcon && "animate-menuIconOpen"
+            }`}
+            onClick={handleKebabClick}
+            onAnimationEnd={() => setAnimateMenuIcon(false)}
+          >
+            {navExpand ? (
+              <GoKebabVertical size={36} />
+            ) : (
+              <GoKebabHorizontal size={36} />
+            )}
+          </div>
+        </Menu.Button>
+      </div>
       <Transition
-        enter="transition duration-100 ease-out"
-        enterFrom="transform scale-95 opacity-0"
+        enter="transition duration-200 ease-out"
+        enterFrom="transform scale-100 opacity-0 -translate-x-60"
         enterTo="transform scale-100 opacity-100"
-        leave="transition duration-75 ease-out"
+        leave="transition duration-200 ease-out"
         leaveFrom="transform scale-100 opacity-100"
-        leaveTo="transform scale-95 opacity-0"
+        leaveTo="transform scale-100 opacity-0 translate-x-60 "
       >
-        <div className="w-full h-screen bg-emerald text-tan rounded-md">
+        <div className="w-full h-screen text-tan flex:col mt-5">
           <Menu.Items>
             {navContent.map(({ path, title, icon }) => {
               return (
                 <Menu.Item key={title}>
-                  <div className="w-3/4 h-1/6 flex my-5 align-middle items-center hover:bg-slate-300">
-                    <span className="px-2 my-3 ">{icon}</span>
+                  <div className="flex ml-5">
+                    <span className="px-2 my-3">{icon}</span>
                     <Link href={path}>
                       <a className={`block m-2 text-5xl`}>{title}</a>
                     </Link>
