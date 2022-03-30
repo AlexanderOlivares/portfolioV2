@@ -14,10 +14,10 @@ const Layout = ({ children, title = "This is the default title" }: Props) => (
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
     </Head>
     {children}
-    <footer>
+    {/* <footer>
       <hr />
       <span>Alex Olivares 2022</span>
-    </footer>
+    </footer> */}
   </div>
 );
 
