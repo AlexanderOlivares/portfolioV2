@@ -17,20 +17,23 @@ interface IProjectCardProps {
 
 const ProjectCard: React.FC<IProjectCardProps> = ({ project }) => {
   return (
-    <div className="border-none">
-      <div className="text-lg lg:text-3xl">{project.title}</div>
+    <div className="border-none p-2 bg-emerald text-tan">
+      <div className="text-lg lg:text-3xl m-auto">{project.title}</div>
       <div>
         <Image src={`${project.img}`} alt="me" width="345" height="194" />
       </div>
       <div className="flex">
-        <span>icons</span>
-        <span>icons</span>
-        <span>icons</span>
-        <span>icons</span>
+        {project.Icons.map(icon => {
+          return <span className="p-1">{icon}</span>;
+        })}
       </div>
-      <div>
-        <span>Live Site</span>
-        <span>View Code</span>
+      <div className="">
+        <span>
+          <button className="border rounded-sm p-1 mr-2">View live site</button>
+        </span>
+        <span>
+          <button className="border rounded-sm p-1 ml-2">View code</button>
+        </span>
       </div>
     </div>
   );

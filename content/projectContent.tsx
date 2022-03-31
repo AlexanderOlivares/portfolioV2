@@ -1,4 +1,5 @@
 import { FaJsSquare, FaReact, FaNodeJs, FaPython } from "react-icons/fa";
+import { SiPostgresql, SiFirebase, SiMaterialui, SiBootstrap } from "react-icons/si";
 // import { Typescript } from "@icons-pack/react-simple-icons";
 import virtualbookshelf from "../public/images/vb.png";
 import widgetgrid from "../public/images/wg.png";
@@ -9,7 +10,13 @@ import predictionBot from "../public/images/predictionBot.png";
 
 let projectData = [
   {
-    Icons: [<FaPython />, <FaReact />, <FaNodeJs />],
+    Icons: [
+      <FaPython />,
+      <FaReact />,
+      <FaNodeJs />,
+      <SiPostgresql />,
+      <SiMaterialui />,
+    ],
     language: "Python",
     title: "Prediction Bot",
     subHeader: "Python | React | TypeScript | PostgreSQL |  Node.js",
@@ -22,7 +29,7 @@ let projectData = [
       It then makes a pick by analyzing the Vegas points spread and determining if the favored team will cover the spread`,
   },
   {
-    Icons: [<FaPython />, <FaReact />, <FaNodeJs />],
+    Icons: [<FaReact />, <FaNodeJs />, <SiPostgresql />, <SiMaterialui />],
     language: "TypeScript",
     title: "Travis Heights Wiffle Ball",
     subHeader:
@@ -34,7 +41,7 @@ let projectData = [
     longDescrip: `A website for a local wiffle ball league to attract players and notifiy them of upcoming games. Uses the Google Maps API to help guide people to the field. Signup confirmation email (SMTP) sent using Nodemailer `,
   },
   {
-    Icons: [<FaPython />, <FaReact />, <FaNodeJs />],
+    Icons: [<FaReact />, <FaNodeJs />, <SiPostgresql />, <SiBootstrap />],
     language: "Node",
     title: "Sidebar List",
     subHeader:
@@ -47,7 +54,7 @@ let projectData = [
     longDescrip: `Create your own private list or invite a friend to a "sidebar list". Just as judges and lawyers have a sidebar for private conversations, you and your invited editor will have a private list. Only you and your editor will be authorized to create, edit and delete items from your shared-list. I made this project so that my girlfriend and I could add items to our grocery list independently. This app also works great for a list of "things to pack" for a vacation.`,
   },
   {
-    Icons: [<FaPython />, <FaReact />, <FaNodeJs />],
+    Icons: [<FaReact />, <SiFirebase />],
     language: "React",
     title: "Virtual Bookshelf",
     subHeader: "React | Firebase | Styled Components",
@@ -72,7 +79,7 @@ let projectData = [
       "It's a weather app, notepad, calculator and an alarm clock/timer/pomodoro timer all wrapped into one project. I made this app as a helper for doing coding challenges. I set up the widget grid on my secondary monitor then I get on Codewars, set the timer and code away. The calculator comes in handy on math related challenges and the notepad is nice for jotting down things to lookup later. The weather app uses the OpenWeatherMap API and works for all U.S. cities",
   },
   {
-    Icons: [<FaJsSquare />],
+    Icons: [<FaJsSquare />, <SiBootstrap />],
     language: "JavaScript",
     title: "TV Countdown Timer",
     subHeader: "Vanilla JavaScript | Bootstrap",
