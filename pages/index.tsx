@@ -6,6 +6,9 @@ import ProjectCard from "../components/ProjectCard";
 import { GoMarkGithub } from "react-icons/go";
 import { GrLinkedin } from "react-icons/gr";
 import projectData from "../content/projectContent";
+import Image from "next/image";
+import headshot from "../public/images/headshot.jpeg";
+import { skillIcons } from "../content/skillIcons";
 
 const IndexPage = () => {
   const [navExpand, setNavExpand] = useState<boolean>(false);
@@ -31,15 +34,21 @@ const IndexPage = () => {
             <Nav navExpand={navExpand} />
           </div>
           <div className="h-screen w-full flex flex-wrap justify-center">
-            <div className="md:w-1/2">
-              <div className="bg-emerald h-1/2 text-tan">
-                <div className="">
+            <div className="md:w-1/3 flex justify-center">
+              <div className="text-center md:h-fit md:mt-24 rounded-lg">
+                <div className="m-1">
+                  <p className="text-5xl">Hi I'm</p>
                   <p className="text-5xl">Alex Olivares</p>
+                  <Image
+                    className="rounded-full"
+                    src={headshot}
+                    alt="alex olivares headshot"
+                  />
                 </div>
-                <div className="">
-                  <p className="text-3xl">Web Developer</p>
+                <div className="text-center">
+                  <p className="text-3xl m-auto">Web Developer</p>
                 </div>
-                <div className="flex">
+                <div className="flex justify-center">
                   <span className="m-2">
                     <GoMarkGithub size={28} />
                   </span>
@@ -49,20 +58,15 @@ const IndexPage = () => {
                 </div>
               </div>
             </div>
-            <div>
-              <div className="">
-                <p className="text-5xl">Alex Olivares</p>
-              </div>
-              <div className="">
-                <p className="text-3xl">Web Developer</p>
-              </div>
-              <div className="flex">
-                <span className="m-2">
-                  <GoMarkGithub size={28} />
-                </span>
-                <span className="m-2">
-                  <GrLinkedin size={28} />
-                </span>
+            <div className="md:w-1/3 bg-emerald text-tan">
+              <div className="flex flex-wrap">
+                {skillIcons.map(Icon => {
+                  return (
+                    <span className="m-2">
+                      <Icon size={60} />
+                    </span>
+                  );
+                })}
               </div>
             </div>
           </div>

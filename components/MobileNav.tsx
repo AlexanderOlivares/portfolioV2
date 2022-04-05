@@ -21,7 +21,7 @@ const MobileNav: React.FC<IMoblieNavProps> = ({ navExpand, setNavExpand }) => {
 
   return (
     <Menu>
-      <div className="bg-tan pb-2">
+      <div className="bg-tan">
         <Menu.Button>
           <div
             className={`bg-tan mx-6 mt-4 rounded-full ${
