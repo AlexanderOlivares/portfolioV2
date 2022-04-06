@@ -12,12 +12,13 @@ import {
   SiCss3,
   SiTailwindcss,
   SiNextdotjs,
+  SiJest
 } from "react-icons/si";
 
 export const skillIcons = [
   FaJsSquare,
   FaReact,
-  FaNodeJs,
+//   FaNodeJs,
   SiTypescript,
   FaPython,
   SiPostgresql,
@@ -27,8 +28,9 @@ export const skillIcons = [
   SiGit,
   SiExpress,
   SiStyledcomponents,
-  SiHtml5,
-  SiCss3,
   SiTailwindcss,
   SiNextdotjs,
+  SiJest,
+  SiHtml5,
+  SiCss3,
 ];

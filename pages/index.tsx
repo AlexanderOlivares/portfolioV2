@@ -9,8 +9,10 @@ import projectData from "../content/projectContent";
 import Image from "next/image";
 import headshot from "../public/images/headshot.jpeg";
 import { skillIcons } from "../content/skillIcons";
+import useMediaQuery from "../utils/UseMediaQuery";
 
 const IndexPage = () => {
+  const isMediumScreen = useMediaQuery("(max-width:1250px)");
   const [navExpand, setNavExpand] = useState<boolean>(false);
 
   const animateNav = () => {
@@ -33,14 +35,19 @@ const IndexPage = () => {
           >
             <Nav navExpand={navExpand} />
           </div>
-          <div className="h-screen w-full flex flex-wrap justify-center">
+          <div className="h-screen w-full flex flex-wrap justify-evenly">
             <div className="md:w-1/3 flex justify-center">
-              <div className="text-center md:h-fit md:mt-24 rounded-lg">
+              {/* <div className="text-center md:h-fit md:mt-24 rounded-lg"> */}
+              <div className="md:h-fit md:mt-24 rounded-lg">
+                <div className="text-center">
+                  <span className="text-3xl">Hi I'm</span>
+                </div>
+                <div className="text-center">
+                  <span className="text-5xl">Alex Olivares</span>
+                </div>
                 <div className="m-1">
-                  <p className="text-5xl">Hi I'm</p>
-                  <p className="text-5xl">Alex Olivares</p>
                   <Image
-                    className="rounded-full"
+                    className="rounded-xl"
                     src={headshot}
                     alt="alex olivares headshot"
                   />
@@ -58,17 +65,33 @@ const IndexPage = () => {
                 </div>
               </div>
             </div>
-            <div className="md:w-1/3 bg-emerald text-tan">
-              <div className="flex flex-wrap">
+            {/* <div className="md:w-1/3 md:h-4/5 md:mt-24 bg-emerald text-tan rounded-md p-2"> */}
+            <div className="md:w-1/3 -mt-36 md:h-1/2 md:mt-24 rounded-md">
+              <div className="text-center">
+                <span className="text-2xl">
+                  I create web apps with these technologies
+                </span>
+              </div>
+              <div className="flex flex-wrap justify-evenly">
                 {skillIcons.map(Icon => {
                   return (
-                    <span className="m-2">
-                      <Icon size={60} />
+                    <span className="m-1 p-3 border-4 rounded-xl bg-emerald text-tan hover:bg-tan hover:border-4 hover:text-emerald hover:origin-top-left">
+                      <Icon size={isMediumScreen ? 20 : 75} />
                     </span>
                   );
                 })}
               </div>
             </div>
+          </div>
+          <div className="md:w-6 flex-col self-end content-end">
+            <div className="text-1xl">P</div>
+            <div className="text-1xl">R</div>
+            <div className="text-1xl">O</div>
+            <div className="text-1xl">J</div>
+            <div className="text-1xl">E</div>
+            <div className="text-1xl">C</div>
+            <div className="text-1xl">T</div>
+            <div className="text-1xl">S</div>
           </div>
         </div>
         <div className="md:p-2 md:ml-12">
