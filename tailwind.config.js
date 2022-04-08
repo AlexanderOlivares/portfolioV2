@@ -4,9 +4,9 @@ module.exports = {
     colors: {
       tan: "#FAF0DC",
       emerald: "#0B4141",
-      lightRed: "#FF6864",
+      darkRed: "#7C2A30",
       darkBlue: "#2B235C",
-      purp: "#E3D8F7",
+      yellow: "#F8D472",
     },
     extend: {
       keyframes: {
