@@ -8,6 +8,11 @@ module.exports = {
       darkBlue: "#2B235C",
       yellow: "#F8D472",
     },
+    screens: {
+      sm: "640px",
+      md: "1350px",
+      xl: "2000px",
+    },
     extend: {
       keyframes: {
         menuIconOpen: {
