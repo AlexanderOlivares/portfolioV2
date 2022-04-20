@@ -10,3 +10,7 @@
     font-family: "Nunito";
   }
 }
+
+html {
+  scroll-behavior: smooth;
+}

@@ -3,14 +3,19 @@ import Layout from "../components/Layout";
 import Nav from "../components/Nav";
 import MobileNav from "../components/MobileNav";
 import ProjectCard from "../components/ProjectCard";
-import { GoMarkGithub } from "react-icons/go";
+import {
+  GoChevronDown,
+  GoCloudDownload,
+  GoChevronUp,
+  GoMarkGithub,
+} from "react-icons/go";
 import { GrLinkedin } from "react-icons/gr";
 import projectData from "../content/projectContent";
 import Image from "next/image";
 import headshot from "../public/images/headshot.jpeg";
 import { skillIcons } from "../content/skillIcons";
 import useMediaQuery from "../utils/UseMediaQuery";
-import { GoChevronDown, GoCloudDownload } from "react-icons/go";
+import Link from "next/link";
 
 const IndexPage = () => {
   const isWideScreen = useMediaQuery("(min-width:2000px)");
@@ -73,7 +78,11 @@ const IndexPage = () => {
                 {isMobile && (
                   <div className="text-center m-8">
                     <button className="flex items-center text-xl m-auto p-2 bg-emerald text-tan rounded-full">
-                      <GoChevronDown size={25} />
+                      <Link href="#skillIcons">
+                        <a>
+                          <GoChevronDown size={25} />
+                        </a>
+                      </Link>
                     </button>
                   </div>
                 )}
@@ -83,6 +92,7 @@ const IndexPage = () => {
               className={`h-fit pt-3 md:w-1/3 max-w-4xl md:h-fit md:p-1 bg-emerald text-tan ${
                 !isMobile && "rounded-md"
               }`}
+              id="skillIcons"
             >
               <div className="text-center">
                 <span className="text-2xl md:text-3xl">I create web apps</span>
@@ -108,7 +118,11 @@ const IndexPage = () => {
                 {isMobile && (
                   <div className="text-center m-6">
                     <button className="flex items-center text-xl m-auto p-2 bg-tan text-emerald rounded-full">
-                      <GoChevronDown size={25} />
+                      <Link href="#projects">
+                        <a>
+                          <GoChevronDown size={25} />
+                        </a>
+                      </Link>
                     </button>
                   </div>
                 )}
@@ -126,15 +140,21 @@ const IndexPage = () => {
               <div className="text-1xl">T</div>
               <div className="text-1xl">S</div>
               <div className="text-1xl pt-3 pr-1">
-                <GoChevronDown />
-                <GoChevronDown />
-                <GoChevronDown />
+                <button className="">
+                  <Link href="#projects">
+                    <a>
+                      <GoChevronDown />
+                      <GoChevronDown />
+                      <GoChevronDown />
+                    </a>
+                  </Link>
+                </button>
               </div>
             </div>
           )}
         </div>
-        <div className="text-center mt-8">
-          <div className="text-6xl md:text-8xl">Projects</div>
+        <div className="text-center mt-8" id="projects">
+          <div className="text-6xl">Projects</div>
         </div>
         <div className="md:ml-12 h-full">
           <div className="flex justify-center flex-wrap">
@@ -148,6 +168,15 @@ const IndexPage = () => {
                 </div>
               );
             })}
+            <div className="text-center m-6">
+              <button className="flex items-center text-xl m-auto p-2 mb-4 bg-emerald text-tan rounded-full">
+                <Link href="/">
+                  <a>
+                    <GoChevronUp size={25} />
+                  </a>
+                </Link>
+              </button>
+            </div>
           </div>
         </div>
       </Layout>
