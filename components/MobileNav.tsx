@@ -12,7 +12,7 @@ interface IMoblieNavProps {
 const MobileNav: React.FC<IMoblieNavProps> = ({ navExpand, setNavExpand }) => {
   const [animateMenuIcon, setAnimateMenuIcon] = useState<boolean>(false);
   const [matchMenuBarColor, setMatchMenuBarColor] = useState<boolean>(false);
-  console.log(navExpand);
+
   const handleKebabClick = () => {
     setMatchMenuBarColor(!matchMenuBarColor);
     setNavExpand(!navExpand);

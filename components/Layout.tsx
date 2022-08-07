@@ -1,24 +1,37 @@
-import React, { ReactNode } from "react";
+import React, { ReactNode, useState } from "react";
 import Head from "next/head";
+import Nav from "./Nav";
+import MobileNav from "./MobileNav";
 
 type Props = {
   children?: ReactNode;
   title?: string;
 };
 
-const Layout = ({ children, title = "This is the default title" }: Props) => (
-  <div className="bg-tan text-emerald">
-    <Head>
-      <title>{title}</title>
-      <meta charSet="utf-8" />
-      <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-    </Head>
-    {children}
-    {/* <footer>
-      <hr />
-      <span>Alex Olivares 2022</span>
-    </footer> */}
-  </div>
-);
+const Layout = ({ children, title = "Alex Olivares Portfolio" }: Props) => {
+  const [navExpand, setNavExpand] = useState<boolean>(false);
+  return (
+    <>
+      <Head>
+        <title>{title}</title>
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
+      <div className="bg-tan text-emerald">
+        <div className="md:hidden bg-emerald">
+          <MobileNav navExpand={navExpand} setNavExpand={setNavExpand} />
+        </div>
+        <div
+          onMouseEnter={() => setNavExpand(true)}
+          onMouseLeave={() => setNavExpand(false)}
+          className="hidden md:block fixed z-50 bg-emerald border-r-2 border-emerald w-12 h-screen pt-48 inset-y-0 left-0 hover:w-40 ease-in-out duration-300"
+        >
+          <Nav navExpand={navExpand} />
+        </div>
+        {children}
+      </div>
+    </>
+  );
+};
 
 export default Layout;

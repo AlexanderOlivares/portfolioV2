@@ -1,8 +1,13 @@
-import { GoBeaker, GoCode, GoInfo, GoMention, GoGear } from "react-icons/go";
+import { GoBeaker, GoCode, GoInfo, GoMention, GoHome } from "react-icons/go";
 
 export const navContent = [
   {
     path: "/",
+    title: "Home",
+    icon: <GoHome size={28} />,
+  },
+  {
+    path: "/projects",
     title: "Projects",
     icon: <GoBeaker size={28} />,
   },
@@ -20,10 +25,5 @@ export const navContent = [
     path: "/contact",
     title: "Contact",
     icon: <GoMention size={28} />,
-  },
-  {
-    path: "/settings",
-    title: "Settings",
-    icon: <GoGear size={28} />,
   },
 ];
