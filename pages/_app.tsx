@@ -6,7 +6,7 @@ import "../styles/index.css";
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <Layout>
-      <Component {...pageProps} />/{" "}
+      <Component {...pageProps} />
     </Layout>
   );
 }

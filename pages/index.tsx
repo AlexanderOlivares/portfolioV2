@@ -1,11 +1,18 @@
 import React from "react";
 import Link from "next/link";
-import { GoChevronDown, GoCloudDownload, GoMarkGithub } from "react-icons/go";
+import {
+  GoChevronDown,
+  GoCloudDownload,
+  GoMarkGithub,
+  GoLinkExternal,
+  GoChevronUp,
+} from "react-icons/go";
 import { GrLinkedin } from "react-icons/gr";
 import Image from "next/image";
 import headshot from "../public/images/headshot.jpeg";
 import { skillIcons } from "../content/skillIcons";
 import useMediaQuery from "../utils/UseMediaQuery";
+import externalLinks from "../content/externalLinkContent";
 
 const IndexPage = () => {
   const isWideScreen = useMediaQuery("(min-width:2000px)");
@@ -35,10 +42,18 @@ const IndexPage = () => {
               </div>
               <div className="flex justify-center mt-3">
                 <span className="m-4">
-                  <GoMarkGithub size={50} />
+                  <Link href={externalLinks.github}>
+                    <a target="_blank">
+                      <GoMarkGithub size={50} />
+                    </a>
+                  </Link>
                 </span>
                 <span className="m-4">
-                  <GrLinkedin size={50} />
+                  <Link href={externalLinks.linkedin}>
+                    <a target="_blank">
+                      <GrLinkedin size={50} />
+                    </a>
+                  </Link>
                 </span>
               </div>
               <div className="text-center mt-4">
@@ -76,7 +91,10 @@ const IndexPage = () => {
               {skillIcons.map(Icon => {
                 return (
                   <span className="m-1 p-2 border-4  bg-tan text-emerald hover:bg-emerald hover:border-4 hover:border-yellow hover:text-tan hover:origin-top-left">
-                    <Icon size={isMobile ? 55 : isWideScreen ? 130 : 75} />
+                    <Icon
+                      onMouseEnter={() => console.log(Icon)}
+                      size={isMobile ? 55 : isWideScreen ? 130 : 75}
+                    />
                   </span>
                 );
               })}
@@ -84,21 +102,31 @@ const IndexPage = () => {
             <div className="p-3 text-center">
               <span className="text-2xl md:text-base">
                 All of my projects were created for practical use and are actively
-                used by myself and others. I enjoy working on projects that make life
-                easier and more convienient.
+                used by myself and others. I enjoy working creating websites that
+                make life easier and more convienient.
               </span>
-              {isMobile && (
-                <div className="text-center m-6">
-                  <button className="flex items-center text-xl m-auto p-2 bg-tan text-emerald rounded-full">
-                    <Link href="#projects">
-                      <a>
-                        <GoChevronDown size={25} />
-                      </a>
-                    </Link>
-                  </button>
-                </div>
-              )}
             </div>
+            <div className="text-center mt-4">
+              <Link href="/projects">
+                <button className="flex items-center text-xl m-auto mb-4 p-2 bg-tan text-emerald rounded-md">
+                  View my projects and code
+                  <a>
+                    <GoLinkExternal size={25} className="ml-3" />
+                  </a>
+                </button>
+              </Link>
+            </div>
+            {isMobile && (
+              <div className="text-center m-6 mb-8">
+                <button className="flex items-center text-xl m-auto p-2 bg-tan text-emerald rounded-full">
+                  <Link href="/">
+                    <a>
+                      <GoChevronUp size={25} />
+                    </a>
+                  </Link>
+                </button>
+              </div>
+            )}
           </div>
         </div>
       </div>

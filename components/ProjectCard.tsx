@@ -17,49 +17,35 @@ interface IProjectCardProps {
 }
 
 const ProjectCard: React.FC<IProjectCardProps> = ({ project }) => {
-  const [description, setDescription] = useState<boolean>(true);
-  const togglePhoto = () => {
-    setTimeout(() => {
-      setDescription(!description);
-    }, 0);
-  };
+  const [showDescription, setShowDescription] = useState<boolean>(false);
+  const togglePhoto = () => setShowDescription(!showDescription);
+
   return (
-    <div className="p-3 bg-emerald text-tan rounded-md hover:bg-darkRed">
+    <div className="py-3 bg-emerald text-tan rounded-md">
       <div className="text-2xl mb-2 lg:text-3xl m-auto text-center">
         {project.title}
       </div>
-      <div
-        onMouseEnter={togglePhoto}
-        onMouseLeave={togglePhoto}
-        className="w-96 h-52"
-      >
-        {description ? (
-          <Image
-            src={`${project.img}`}
-            alt="Alex Olivares Headshot"
-            width="384"
-            height="208"
-          />
-        ) : (
+      <div onClick={togglePhoto} className="w-96 h-52 cursor-pointer ">
+        <div
+          className={`bg-tan text-emerald w-96 h-52  ${
+            showDescription && "overflow-y-auto"
+          }`}
+        >
+          {!showDescription && (
+            <Image src={project.img} alt={project.title} width="384" height="208" />
+          )}
           <Transition
-            show={!description}
-            enter="transition-opacity duration-2000"
-            enterFrom="opacity-0"
-            enterTo="opacity-100"
-            leave="transition-opacity duration-150"
-            leaveFrom="opacity-100"
-            leaveTo="opacity-0"
+            show={showDescription}
+            // enter="transform transition duration-[100ms]"
+            // enterFrom="opacity-0 scale-50"
+            // enterTo="opacity-100 rotate-0 scale-100"
+            // leave="transform transition ease-in-out"
+            // leaveFrom="opacity-100 rotate-0 scale-100"
+            // leaveTo="opacity-0 scale-95"
           >
-            <div
-              className="bg-yellow w-96 h-52"
-              //   className={`bg-yellow text-emerald w-96 h-52 ${
-              //     description && "animate-showProjectDescription"
-              //   }`}
-            >
-              alex aalkdjfalkjdlakjdflakjsflkj
-            </div>
+            <div className="p-2">{project.longDescrip}</div>
           </Transition>
-        )}
+        </div>
       </div>
       <div className="flex m-2 justify-center">
         {project.Icons.map(icon => {
@@ -68,12 +54,12 @@ const ProjectCard: React.FC<IProjectCardProps> = ({ project }) => {
       </div>
       <div className="text-center py-1">
         <span>
-          <button className="border rounded-sm p-1 mr-2 text-2xl bg-tan text-emerald">
+          <button className="border rounded-md p-2 mr-2 text-2xl bg-tan text-emerald hover:bg-yellow">
             View live site
           </button>
         </span>
         <span>
-          <button className="border rounded-sm p-1 ml-2 text-2xl bg-tan text-emerald">
+          <button className="border rounded-md p-2 ml-2 text-2xl bg-tan text-emerald">
             View code
           </button>
         </span>

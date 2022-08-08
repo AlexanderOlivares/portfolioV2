@@ -21,7 +21,7 @@ module.exports = {
       },
       animation: {
         menuIconOpen: "menuIconOpen 500ms ease-in-out",
-        // showProjectDescription: "showProjectDescription 2000ms ease-in-out",
+        showProjectDescription: "showProjectDescription 2000ms ease-in-out",
       },
     },
   },
