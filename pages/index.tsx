@@ -30,7 +30,7 @@ const IndexPage = () => {
               <div className="text-center mt-1">
                 <span className="text-5xl md:text-6xl">Alex Olivares</span>
               </div>
-              <div className="m-1">
+              <div className="m-1 drop-shadow-xl">
                 <Image
                   className="rounded-md"
                   src={headshot}
@@ -76,7 +76,7 @@ const IndexPage = () => {
             </div>
           </div>
           <div
-            className={`h-fit pt-3 md:w-1/3 max-w-4xl md:h-fit md:p-1 bg-emerald text-tan ${
+            className={`h-fit pt-3 md:w-1/3 max-w-4xl shadow-2xl md:h-fit md:p-1 bg-emerald text-tan ${
               !isMobile && "rounded-md"
             }`}
             id="skillIcons"

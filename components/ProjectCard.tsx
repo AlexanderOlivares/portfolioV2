@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { Transition } from "@headlessui/react";
 
 interface IProjectCardProps {
@@ -27,7 +28,7 @@ const ProjectCard: React.FC<IProjectCardProps> = ({ project }) => {
       </div>
       <div onClick={togglePhoto} className="w-96 h-52 cursor-pointer ">
         <div
-          className={`bg-tan text-emerald w-96 h-52  ${
+          className={`bg-tan text-emerald  w-96 h-52  ${
             showDescription && "overflow-y-auto"
           }`}
         >
@@ -36,14 +37,14 @@ const ProjectCard: React.FC<IProjectCardProps> = ({ project }) => {
           )}
           <Transition
             show={showDescription}
-            // enter="transform transition duration-[100ms]"
-            // enterFrom="opacity-0 scale-50"
-            // enterTo="opacity-100 rotate-0 scale-100"
-            // leave="transform transition ease-in-out"
-            // leaveFrom="opacity-100 rotate-0 scale-100"
-            // leaveTo="opacity-0 scale-95"
+            enter="transform transition duration-[100ms]"
+            enterFrom="opacity-0 scale-50"
+            enterTo="opacity-100 rotate-0 scale-100"
+            leave="transform scale-100"
+            leaveFrom="opacity-0 rotate-0 scale-50"
+            leaveTo="opacity-0 scale-0"
           >
-            <div className="p-2">{project.longDescrip}</div>
+            <div className="p-2 ">{project.longDescrip}</div>
           </Transition>
         </div>
       </div>
@@ -54,14 +55,22 @@ const ProjectCard: React.FC<IProjectCardProps> = ({ project }) => {
       </div>
       <div className="text-center py-1">
         <span>
-          <button className="border rounded-md p-2 mr-2 text-2xl bg-tan text-emerald hover:bg-yellow">
-            View live site
-          </button>
+          <Link href={project.demo}>
+            <a target="_blank">
+              <button className="border rounded-md p-2 ml-2 text-2xl bg-tan text-emerald">
+                View live site
+              </button>
+            </a>
+          </Link>
         </span>
         <span>
-          <button className="border rounded-md p-2 ml-2 text-2xl bg-tan text-emerald">
-            View code
-          </button>
+          <Link href={project.repoUrl}>
+            <a target="_blank">
+              <button className="border rounded-md p-2 ml-2 text-2xl bg-tan text-emerald">
+                View code
+              </button>
+            </a>
+          </Link>
         </span>
       </div>
     </div>
