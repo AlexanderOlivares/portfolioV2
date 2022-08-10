@@ -22,7 +22,7 @@ const ProjectCard: React.FC<IProjectCardProps> = ({ project }) => {
   const togglePhoto = () => setShowDescription(!showDescription);
 
   return (
-    <div className="py-3 bg-emerald text-tan rounded-md">
+    <div className="py-3 bg-emerald text-tan shadow-2xl rounded-md">
       <div className="text-2xl mb-2 lg:text-3xl m-auto text-center">
         {project.title}
       </div>
