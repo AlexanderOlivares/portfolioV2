@@ -59,7 +59,7 @@ const IndexPage = () => {
               <div className="text-center mt-4">
                 <button className="flex items-center text-xl m-auto p-2 bg-emerald text-tan rounded-md">
                   Download my resume
-                  <GoCloudDownload size={25} className="ml-3" />
+                  <GoCloudDownload size={20} className="ml-3" />
                 </button>
               </div>
               {isMobile && (
@@ -102,8 +102,8 @@ const IndexPage = () => {
             <div className="p-3 text-center">
               <span className="text-2xl md:text-base">
                 All of my projects were created for practical use and are actively
-                used by myself and others. I enjoy working creating websites that
-                make life easier and more convienient.
+                used by myself and others. I enjoy creating websites that make life
+                easier and more convienient.
               </span>
             </div>
             <div className="text-center mt-4">
@@ -111,7 +111,7 @@ const IndexPage = () => {
                 <button className="flex items-center text-xl m-auto mb-4 p-2 bg-tan text-emerald rounded-md">
                   View my projects and code
                   <a>
-                    <GoLinkExternal size={25} className="ml-3" />
+                    <GoLinkExternal size={20} className="ml-3" />
                   </a>
                 </button>
               </Link>

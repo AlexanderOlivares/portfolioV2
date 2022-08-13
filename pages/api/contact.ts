@@ -32,7 +32,7 @@ export default async function handler(req,res){
         transporter.sendMail(mailOptions, (error, info) => {
             if (error) {
               console.log(error);
-              return res.status(500).send("Error sending email...");
+              res.status(500).json({ message: "Error sending email..." });
             } else {
               console.log("Email sent: " + info.response);
             }
@@ -42,6 +42,6 @@ export default async function handler(req,res){
         
     } catch (error) {
         console.log(error);    
-        res.status(500).send("Error sending email...");
+        res.status(500).json({ message: "Error sending email..." });
     }
 }
