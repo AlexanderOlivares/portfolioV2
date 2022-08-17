@@ -1,3 +1,4 @@
+import { IconType } from "react-icons";
 import { FaJsSquare, FaReact, FaNodeJs, FaPython } from "react-icons/fa";
 import {
   SiPostgresql,
@@ -15,10 +16,10 @@ import {
   SiJest
 } from "react-icons/si";
 
-export const skillIcons = [
-  FaJsSquare,
+export const skillIcons: IconType[] = [
+  FaNodeJs,
+//   FaJsSquare,
   FaReact,
-//   FaNodeJs,
   SiTypescript,
   FaPython,
   SiPostgresql,

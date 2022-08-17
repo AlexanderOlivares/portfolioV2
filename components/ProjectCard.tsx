@@ -22,7 +22,7 @@ const ProjectCard: React.FC<IProjectCardProps> = ({ project }) => {
   const togglePhoto = () => setShowDescription(!showDescription);
 
   return (
-    <div className="py-3 bg-emerald text-tan shadow-2xl rounded-md">
+    <div className="py-3 bg-emerald text-tan shadow-2xl shadow-emerald rounded-md">
       <div className="text-2xl mb-2 lg:text-3xl m-auto text-center">
         {project.title}
       </div>
@@ -57,7 +57,8 @@ const ProjectCard: React.FC<IProjectCardProps> = ({ project }) => {
         <span>
           <Link href={project.demo}>
             <a target="_blank">
-              <button className="border rounded-md p-2 ml-2 text-2xl bg-tan text-emerald">
+              {/* <button className="border rounded-md px-2 py-1 ml-2 text-2xl bg-tan text-emerald"> */}
+              <button className="border-2 rounded-md px-2 py-1 ml-2 text-2xl bg-emerald text-tan hover:text-yellow">
                 View live site
               </button>
             </a>
@@ -66,7 +67,8 @@ const ProjectCard: React.FC<IProjectCardProps> = ({ project }) => {
         <span>
           <Link href={project.repoUrl}>
             <a target="_blank">
-              <button className="border rounded-md p-2 ml-2 text-2xl bg-tan text-emerald">
+              {/* <button className="border rounded-md px-2 py-1 ml-2 text-2xl bg-tan text-emerald"> */}
+              <button className="border-2 rounded-md px-2 py-1 ml-2 text-2xl bg-emerald text-tan hover:text-yellow">
                 View code
               </button>
             </a>

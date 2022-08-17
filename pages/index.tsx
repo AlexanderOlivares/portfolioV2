@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import {
   GoChevronDown,
@@ -17,6 +17,7 @@ import externalLinks from "../content/externalLinkContent";
 const IndexPage = () => {
   const isWideScreen = useMediaQuery("(min-width:2000px)");
   const isMobile = useMediaQuery("(max-width:775px)");
+  const [tooltip, setTooltip] = useState<string>("these technologies");
 
   return (
     <>
@@ -40,15 +41,15 @@ const IndexPage = () => {
               <div className="text-center mt-3">
                 <p className="text-5xl md:text-6xl m-auto">Web Developer</p>
               </div>
-              <div className="flex justify-center mt-3">
-                <span className="m-4">
+              <div className="flex justify-center mt-1">
+                <span className="m-4 shadow-2xl">
                   <Link href={externalLinks.github}>
                     <a target="_blank">
                       <GoMarkGithub size={50} />
                     </a>
                   </Link>
                 </span>
-                <span className="m-4">
+                <span className="m-4 shadow-2xl shadow-emerald">
                   <Link href={externalLinks.linkedin}>
                     <a target="_blank">
                       <GrLinkedin size={50} />
@@ -56,8 +57,8 @@ const IndexPage = () => {
                   </Link>
                 </span>
               </div>
-              <div className="text-center mt-4">
-                <button className="flex items-center text-xl m-auto p-2 bg-emerald text-tan rounded-md">
+              <div className="text-center mt-2">
+                <button className="flex items-center shadow-2xl shadow-emerald text-xl m-auto p-2 bg-emerald text-tan rounded-md">
                   Download my resume
                   <GoCloudDownload size={20} className="ml-3" />
                 </button>
@@ -76,23 +77,24 @@ const IndexPage = () => {
             </div>
           </div>
           <div
-            className={`h-fit pt-3 md:w-1/3 max-w-4xl shadow-2xl md:h-fit md:p-1 bg-emerald text-tan ${
+            className={`h-fit pt-3 md:w-1/3 max-w-4xl shadow-2xl shadow-emerald md:h-fit md:p-1 bg-emerald text-tan ${
               !isMobile && "rounded-md"
             }`}
             id="skillIcons"
           >
             <div className="text-center">
-              <span className="text-2xl md:text-3xl">I create web apps</span>
+              <span className="text-2xl md:text-3xl">I create web apps with</span>
             </div>
             <div className="text-center">
-              <span className="text-2xl md:text-3xl">with these technologies</span>
+              <span className="text-2xl md:text-3xl">{tooltip}</span>
             </div>
             <div className="flex flex-wrap justify-evenly">
               {skillIcons.map(Icon => {
                 return (
-                  <span className="m-1 p-2 border-4  bg-tan text-emerald hover:bg-emerald hover:border-4 hover:border-yellow hover:text-tan hover:origin-top-left">
+                  <span className="m-1 p-2 border-2  bg-tan text-emerald hover:bg-emerald hover:border-3 hover:border-yellow hover:text-tan hover:origin-top-left">
                     <Icon
-                      onMouseEnter={() => console.log(Icon)}
+                      //   onMouseEnter={() => console.log(Icon.name)}
+                      onMouseEnter={() => setTooltip(Icon.name.slice(2))}
                       size={isMobile ? 55 : isWideScreen ? 130 : 75}
                     />
                   </span>
@@ -108,7 +110,7 @@ const IndexPage = () => {
             </div>
             <div className="text-center mt-4">
               <Link href="/projects">
-                <button className="flex items-center text-xl m-auto mb-4 p-2 bg-tan text-emerald rounded-md">
+                <button className="flex items-center text-xl m-auto mb-4 p-2  bg-emerald text-tan border hover:border-yellow  hover:text-yellow rounded-md">
                   View my projects and code
                   <a>
                     <GoLinkExternal size={20} className="ml-3" />

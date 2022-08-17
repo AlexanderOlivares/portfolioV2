@@ -44,8 +44,8 @@ const Contact = () => {
   return (
     <>
       <div className="flex h-screen justify-center md:items-center">
-        <div className="w-full text-center max-w-sm p-1 md:max-w-4xl">
-          <div className="text-emerald text-center md:pt-0 pb-12 text-6xl">
+        <div className="w-full text-center max-w-sm p-1 md:max-w-4xl lg:-mt-24">
+          <div className="text-emerald text-center md:pt-10 pb-12 text-6xl">
             Contact Me
           </div>
           <form
@@ -65,7 +65,7 @@ const Contact = () => {
                 required
               ></input>
             </div>
-            <div className="md:mt-10 mb-4">
+            <div className="md:mt-6 mb-4">
               <label className="block text-tan text-3xl mb-2">
                 Email to reach you
                 <p className="text-sm">(optional)</p>
@@ -80,13 +80,13 @@ const Contact = () => {
                 placeholder="email"
               ></input>
             </div>
-            <div className="md:mt-10">
+            <div className="md:mt-6">
               <label className="block text-tan text-4xl mb-4">Drop me a line</label>
               <textarea
                 onChange={formChangeHandler}
                 value={formValues.message}
                 name="message"
-                rows={10}
+                rows={6}
                 className="shadow appearance-none border rounded w-full py-2 px-3 text-emerald mb-3 leading-tight focus:outline-none focus:shadow-outline"
                 id="contact-message"
                 placeholder="message"

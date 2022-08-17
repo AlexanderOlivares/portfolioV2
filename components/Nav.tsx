@@ -19,7 +19,9 @@ const Nav: React.FC<INavProps> = ({ navExpand }) => {
               <span className="px-2 my-4">{icon}</span>
               <span
                 className={
-                  navExpand ? "visible mx-4 ease-in-out duration-700" : "invisible"
+                  navExpand
+                    ? "visible mx-4 ease-in-out duration-700"
+                    : "invisible text-opacity-100"
                 }
               >
                 <Link href={path}>
