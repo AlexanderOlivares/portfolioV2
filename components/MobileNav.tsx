@@ -26,7 +26,7 @@ const MobileNav: React.FC<IMoblieNavProps> = ({ navExpand, setNavExpand }) => {
     <>
       <Menu>
         <div className="bg-tan">
-          <Menu.Button>
+          <Menu.Button aria-label="toggle nav bar">
             <div
               className={`bg-tan mx-6 mt-4 rounded-full ${
                 animateMenuIcon && "animate-menuIconOpen"

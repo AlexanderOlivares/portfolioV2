@@ -5,17 +5,17 @@ import MobileNav from "./MobileNav";
 
 type Props = {
   children?: ReactNode;
-  title?: string;
 };
 
-const Layout = ({ children, title = "Alex Olivares Portfolio" }: Props) => {
+const Layout = ({ children }: Props) => {
   const [navExpand, setNavExpand] = useState<boolean>(false);
   return (
     <>
       <Head>
-        <title>{title}</title>
+        <title>Alex Olivares Porfolio</title>
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta name="author" content="Alex Olivares" />
       </Head>
       <div className="bg-tan text-emerald overflow-y-auto">
         <div className="md:hidden bg-emerald">

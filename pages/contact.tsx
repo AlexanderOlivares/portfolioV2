@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { GoMail } from "react-icons/go";
+import Head from "next/head";
 
 interface IFormValues {
   name: string;
@@ -43,6 +44,15 @@ const Contact = () => {
 
   return (
     <>
+      <Head>
+        <title>Contact - Alex Olivares Porfolio</title>
+        <meta
+          property="og:title"
+          content="Contact me directly - Alex Olivares"
+          key="title"
+        />
+        <meta name="description" content="Contact Alex Olivares" />
+      </Head>
       <div className="flex h-screen justify-center md:items-center">
         <div className="w-full text-center max-w-sm p-1 md:max-w-4xl lg:-mt-24">
           <div className="text-emerald text-center md:pt-10 pb-12 text-6xl">

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
+import Head from "next/head";
 import {
   GoChevronDown,
   GoCloudDownload,
@@ -21,6 +22,18 @@ const IndexPage = () => {
 
   return (
     <>
+      <Head>
+        <title>Alex Olivares Portfolio</title>
+        <meta
+          property="og:title"
+          content="Alex Olivares Web Dev Portfolio Homepage"
+          key="title"
+        />
+        <meta
+          name="description"
+          content="Alex Olivares Web Dev Portfolio Homepage"
+        />
+      </Head>
       <div className="relative md:flex">
         <div className="md:h-screen w-full flex flex-wrap justify-evenly content-center">
           <div className="h-full md:w-1/3 md:h-1/2">
@@ -44,28 +57,40 @@ const IndexPage = () => {
               <div className="flex justify-center mt-1">
                 <span className="m-4 shadow-2xl">
                   <Link href={externalLinks.github}>
-                    <a target="_blank">
+                    <a
+                      aria-label="link to alex olivares github profile"
+                      target="_blank"
+                    >
                       <GoMarkGithub size={50} />
                     </a>
                   </Link>
                 </span>
                 <span className="m-4 shadow-2xl shadow-emerald">
                   <Link href={externalLinks.linkedin}>
-                    <a target="_blank">
+                    <a
+                      aria-label="link to alex olivares linkedin profile"
+                      target="_blank"
+                    >
                       <GrLinkedin size={50} />
                     </a>
                   </Link>
                 </span>
               </div>
               <div className="text-center mt-2">
-                <button className="flex items-center shadow-2xl shadow-emerald text-xl m-auto p-2 bg-emerald text-tan rounded-md">
+                <button
+                  aria-label="download alex olivares resume"
+                  className="flex items-center shadow-2xl shadow-emerald text-xl m-auto p-2 bg-emerald text-tan rounded-md"
+                >
                   Download my resume
                   <GoCloudDownload size={20} className="ml-3" />
                 </button>
               </div>
               {isMobile && (
                 <div className="text-center m-8">
-                  <button className="flex items-center text-xl m-auto p-2 bg-emerald text-tan rounded-full">
+                  <button
+                    aria-label="scroll down"
+                    className="flex items-center text-xl m-auto p-2 bg-emerald text-tan rounded-full"
+                  >
                     <Link href="#skillIcons">
                       <a>
                         <GoChevronDown size={25} />
@@ -110,17 +135,21 @@ const IndexPage = () => {
             </div>
             <div className="text-center mt-4">
               <Link href="/projects">
-                <button className="flex items-center text-xl m-auto mb-4 p-2  bg-emerald text-tan border hover:border-yellow  hover:text-yellow rounded-md">
+                <button
+                  aria-label="view alex olivares web projects and code"
+                  className="flex items-center text-xl m-auto mb-4 p-2  bg-emerald text-tan border hover:border-yellow  hover:text-yellow rounded-md"
+                >
                   View my projects and code
-                  <a>
-                    <GoLinkExternal size={20} className="ml-3" />
-                  </a>
+                  <GoLinkExternal size={20} className="ml-3" />
                 </button>
               </Link>
             </div>
             {isMobile && (
               <div className="text-center m-6 mb-8">
-                <button className="flex items-center text-xl m-auto p-2 bg-tan text-emerald rounded-full">
+                <button
+                  aria-label="scroll up"
+                  className="flex items-center text-xl m-auto p-2 bg-tan text-emerald rounded-full"
+                >
                   <Link href="/">
                     <a>
                       <GoChevronUp size={25} />

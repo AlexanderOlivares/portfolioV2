@@ -1,6 +1,7 @@
 import projectData from "../content/projectContent";
 import ProjectCard from "../components/ProjectCard";
 import Link from "next/link";
+import Head from "next/head";
 import useMediaQuery from "../utils/UseMediaQuery";
 import { GoChevronUp } from "react-icons/go";
 
@@ -9,6 +10,14 @@ const ProjectsPage = () => {
 
   return (
     <>
+      <Head>
+        <title>Web Projects - Alex Olivares Portfolio</title>
+        <meta property="og:title" content="Alex Olivares Web Projects" key="title" />
+        <meta
+          name="description"
+          content="Alex Olivares web projects and source code"
+        />
+      </Head>
       <div className="md:h-screen min-h-screen">
         <div className="text-center pt-1 md:p-4 lg:p-10" id="projects">
           <div className="text-6xl md:mt-6">Projects</div>

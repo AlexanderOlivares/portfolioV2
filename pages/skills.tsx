@@ -1,12 +1,25 @@
 import React from "react";
 import ChallengeSiteCard from "../components/ChallengeSiteCard";
 import challengeSiteConent from "../content/challengSitesContent";
+import Head from "next/head";
 import Link from "next/link";
 import { GoChevronUp } from "react-icons/go";
 
 const Skills = () => {
   return (
     <>
+      <Head>
+        <title>Skills - Alex Olivares Porfolio</title>
+        <meta
+          property="og:title"
+          content="Web Dev Skills - Alex Olivares"
+          key="title"
+        />
+        <meta
+          name="description"
+          content="Alex Olivares web development skills page"
+        />
+      </Head>
       <div className="md:h-screen min-h-screen">
         <div className="text-center pt-1 md:p-4 lg:p-10" id="skils">
           <div className="text-6xl md:mt-6">Back-end skills</div>

@@ -20,7 +20,9 @@ const Nav: React.FC<INavProps> = ({ navExpand }) => {
               className="flex cursor-pointer align-middle items-center border-y-2 border-emerald hover:border-y-2 border-solid hover:border-tan"
             >
               <Link href={path}>
-                <a className="px-2 my-4">{icon}</a>
+                <a aria-label={title} className="px-2 my-4">
+                  {icon}
+                </a>
               </Link>
               <span
                 className={
@@ -30,7 +32,9 @@ const Nav: React.FC<INavProps> = ({ navExpand }) => {
                 }
               >
                 <Link href={path}>
-                  <a className="text-2xl">{title}</a>
+                  <a aria-label={title} className="text-2xl">
+                    {title}
+                  </a>
                 </Link>
               </span>
             </div>
@@ -42,14 +46,17 @@ const Nav: React.FC<INavProps> = ({ navExpand }) => {
           <div className="flex pl-2">
             <span className="m-4 text-tan">
               <Link href={externalLinks.github}>
-                <a target="_blank">
+                <a aria-label="link to alex olivares github profile" target="_blank">
                   <GoMarkGithub size={35} />
                 </a>
               </Link>
             </span>
             <span className="m-4 text-tan">
               <Link href={externalLinks.linkedin}>
-                <a target="_blank">
+                <a
+                  aria-label="link to alex olivares linkedin profile"
+                  target="_blank"
+                >
                   <GrLinkedin size={35} />
                 </a>
               </Link>
