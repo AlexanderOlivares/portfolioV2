@@ -1,6 +1,9 @@
 import React from "react";
 import Link from "next/link";
 import { navContent } from "../content/navContent";
+import { GoMarkGithub } from "react-icons/go";
+import { GrLinkedin } from "react-icons/gr";
+import externalLinks from "../content/externalLinkContent";
 
 interface INavProps {
   navExpand: boolean;
@@ -14,9 +17,11 @@ const Nav: React.FC<INavProps> = ({ navExpand }) => {
           return (
             <div
               key={title}
-              className="flex align-middle items-center border-y-2 border-emerald hover:border-y-2 border-solid hover:border-tan"
+              className="flex cursor-pointer align-middle items-center border-y-2 border-emerald hover:border-y-2 border-solid hover:border-tan"
             >
-              <span className="px-2 my-4">{icon}</span>
+              <Link href={path}>
+                <a className="px-2 my-4">{icon}</a>
+              </Link>
               <span
                 className={
                   navExpand
@@ -32,6 +37,26 @@ const Nav: React.FC<INavProps> = ({ navExpand }) => {
           );
         })}
       </nav>
+      {navExpand && (
+        <div className="justify-center fixed inset-x-0 bottom-0">
+          <div className="flex pl-2">
+            <span className="m-4 text-tan">
+              <Link href={externalLinks.github}>
+                <a target="_blank">
+                  <GoMarkGithub size={35} />
+                </a>
+              </Link>
+            </span>
+            <span className="m-4 text-tan">
+              <Link href={externalLinks.linkedin}>
+                <a target="_blank">
+                  <GrLinkedin size={35} />
+                </a>
+              </Link>
+            </span>
+          </div>
+        </div>
+      )}
     </>
   );
 };

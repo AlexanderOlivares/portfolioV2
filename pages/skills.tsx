@@ -12,9 +12,6 @@ const Skills = () => {
           <div className="text-6xl md:mt-6">Back-end skills</div>
         </div>
         <div className="md:ml-12 bg-tan">
-          {/* <div className="text-center text-5xl pt-8 mt-4 bg-tan text-emerald">
-            Back-end
-          </div> */}
           <div className="flex justify-center items-center min-h-screen md:pb-36 min-w-6/12 flex-wrap">
             {challengeSiteConent.map(site => {
               return (
@@ -28,9 +25,6 @@ const Skills = () => {
             })}
           </div>
         </div>
-        {/* <div className="text-center text-5xl pt-8 mt-4 bg-emerald text-tan">
-          Front-end
-        </div> */}
         <div className="text-center pt-1 md:p-4 lg:p-10 bg-emerald text-tan">
           <div className="text-6xl md:mt-6">Front-end skills</div>
         </div>
