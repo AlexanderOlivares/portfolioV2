@@ -26,7 +26,7 @@ let projectData = [
     language: "Python",
     title: "Prediction Bot",
     subHeader: "Python | React | TypeScript | PostgreSQL |  Node.js",
-    img: "/../public/images/predictionBot.png",
+    img: "/images/predictionBot.png",
     repoUrl: "https://github.com/AlexanderOlivares/sportsPredictionBot",
     demo: "https://sports-prediction-bot.herokuapp.com/",
     shortDescrip:
