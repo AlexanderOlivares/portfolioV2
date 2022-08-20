@@ -16,7 +16,7 @@ let challengeSiteConent = [
     site: "Codewars",
     img: "https://www.codewars.com/users/AlexanderOlivares/badges/micro",
     link: "https://www.codewars.com/users/AlexanderOlivares/",
-    solved: 324,
+    solved: 326,
     shortDescrip: "Honor percentile: top 1.981%",
     longDescrip: "",
   },

@@ -21,7 +21,7 @@ const Skills = () => {
         />
       </Head>
       <div className="md:h-screen min-h-screen">
-        <div className="text-center pt-1 md:p-4 lg:p-10" id="skils">
+        {/* <div className="text-center pt-1 md:p-4 lg:p-10" id="skils">
           <div className="text-6xl md:mt-6">Back-end skills</div>
         </div>
         <div className="md:ml-12 bg-tan">
@@ -54,8 +54,10 @@ const Skills = () => {
               );
             })}
           </div>
+        </div> */}
+        <div className="text-center pt-1 md:p-4 lg:p-10" id="skils">
+          <div className="text-6xl md:mt-6">Problem Solving</div>
         </div>
-        <div className="text-center text-2xl pt-2 mt-4">Problem Solving</div>
         <div className="md:ml-12 bg-tan text-emerald">
           <div className="flex justify-center items-center min-h-screen md:pb-36 min-w-6/12 flex-wrap">
             {challengeSiteConent.map(site => {

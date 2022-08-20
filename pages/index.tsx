@@ -11,7 +11,7 @@ import {
 import { GrLinkedin } from "react-icons/gr";
 import Image from "next/image";
 import headshot from "../public/images/headshot.jpeg";
-import { skillIcons } from "../content/skillIcons";
+import { skillIcons, skillIconNameLookup } from "../content/skillIcons";
 import useMediaQuery from "../utils/UseMediaQuery";
 import externalLinks from "../content/externalLinkContent";
 
@@ -119,7 +119,9 @@ const IndexPage = () => {
                   <span className="m-1 p-2 border-2  bg-tan text-emerald hover:bg-emerald hover:border-3 hover:border-yellow hover:text-tan hover:origin-top-left">
                     <Icon
                       //   onMouseEnter={() => console.log(Icon.name)}
-                      onMouseEnter={() => setTooltip(Icon.name.slice(2))}
+                      onMouseEnter={() =>
+                        setTooltip(skillIconNameLookup[Icon.name.slice(2)])
+                      }
                       size={isMobile ? 55 : isWideScreen ? 130 : 75}
                     />
                   </span>
