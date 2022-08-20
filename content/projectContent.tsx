@@ -45,7 +45,7 @@ let projectData = [
     title: "Travis Heights Wiffle Ball",
     subHeader:
       "TypeScript | React | PostgreSQL | Express | Node.js | REST API | Nodemailer | Material UI",
-    img: "/../public/images/wiffle.png",
+    img: "/images/wiffle.png",
     repoUrl: "https://github.com/AlexanderOlivares/TravisHeightsWiffleballLeague",
     demo: "https://wiffle.herokuapp.com/",
     shortDescrip: "Website for a newly formed wiffle ball league in Austin, TX.",
@@ -62,7 +62,7 @@ let projectData = [
     title: "Sidebar List",
     subHeader:
       "PostgreSQL | Express | React | Node.js | JWT | REST api | Bootstrap | EmailJS",
-    img: "/../public/images/sidebar.png",
+    img: "/images/sidebar.png",
     repoUrl: "https://github.com/AlexanderOlivares/sidebar-list",
     demo: "https://sidebar-list.herokuapp.com/",
     shortDescrip:
@@ -74,7 +74,7 @@ let projectData = [
     language: "React",
     title: "Virtual Bookshelf",
     subHeader: "React | Firebase | Styled Components",
-    img: "/../public/images/vb.png",
+    img: "/images/vb.png",
     repoUrl: "https://github.com/AlexanderOlivares/Virtual-Bookshelf",
     demo: "https://alexanderolivares.github.io/Virtual-Bookshelf/",
     shortDescrip:
@@ -87,7 +87,7 @@ let projectData = [
     language: "JavaScript",
     title: "Widget Grid",
     subHeader: "Vanilla JavaScript | CSS",
-    img: "/../public/images/wg.png",
+    img: "/images/wg.png",
     repoUrl: "https://github.com/AlexanderOlivares/Widget-Grid",
     demo: "https://alexanderolivares.github.io/Widget-Grid/",
     shortDescrip: "Four-in-one widget app built with CSS grid",
@@ -99,7 +99,7 @@ let projectData = [
     language: "JavaScript",
     title: "TV Countdown Timer",
     subHeader: "Vanilla JavaScript | Bootstrap",
-    img: "/../public/images/timer.png",
+    img: "/images/timer.png",
     repoUrl: "https://github.com/AlexanderOlivares/tvTimer",
     demo: "https://alexanderolivares.github.io/tvTimer/",
     shortDescrip:
