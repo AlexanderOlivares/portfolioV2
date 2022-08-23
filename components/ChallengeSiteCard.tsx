@@ -2,6 +2,10 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
+const imageLoader = ({ src, width = 200, quality = 75 }) => {
+  return `${src}?w=${width}&q=${quality}`;
+};
+
 interface IChallengeSiteCardProps {
   site: {
     site: string;
@@ -34,7 +38,13 @@ const ChallengeSiteCard: React.FC<IChallengeSiteCardProps> = ({ site }) => {
       </div>
       {site.site == "Codewars" && (
         <div className="text-center">
-          <Image src={site.img} alt={site.site} width="200" height="50" />
+          <Image
+            loader={imageLoader}
+            src={site.img}
+            alt={site.site}
+            width="200"
+            height="50"
+          />
         </div>
       )}
       <div className="text-center py-2">
