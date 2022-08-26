@@ -19,8 +19,6 @@ interface IChallengeSiteCardProps {
 }
 
 const ChallengeSiteCard: React.FC<IChallengeSiteCardProps> = ({ site }) => {
-  const [showDescription, setShowDescription] = useState<boolean>(false);
-
   return (
     <div className="py-3 bg-emerald text-tan shadow-2xl shadow-emerald rounded-md border-tan">
       <div className="text-5xl mb-2 lg:text-3xl m-auto text-center">{site.site}</div>

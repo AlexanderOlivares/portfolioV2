@@ -4,8 +4,11 @@ import challengeSiteConent from "../content/challengSitesContent";
 import Head from "next/head";
 import Link from "next/link";
 import { GoChevronUp } from "react-icons/go";
+import pool from "../db/db";
+import { leetcodeGraphqlQuery } from "../db/leetcodeGraphqlQuery";
 
-const Skills = () => {
+export default function Skills({ codeChallengeStats }) {
+  console.log(codeChallengeStats);
   return (
     <>
       <Head>
@@ -84,6 +87,51 @@ const Skills = () => {
       </div>
     </>
   );
-};
+}
 
-export default Skills;
+export async function getServerSideProps() {
+  try {
+    const getStats = await pool.query(`SELECT * FROM code_challenge_stats`);
+
+    let codeChallengeStats = {};
+
+    if (getStats.rows) {
+      codeChallengeStats["db"] = getStats.rows[0];
+    }
+
+    const requestOptions = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+        referer: "https://leetcode.com/AlexanderOlivares/",
+      },
+      body: JSON.stringify(leetcodeGraphqlQuery),
+    };
+
+    try {
+      console.log("hi");
+      const getLeetcodeStats = await fetch(
+        "https://leetcode.com/graphql/",
+        requestOptions
+      );
+      const leetcodeStats = await getLeetcodeStats.json();
+      const leetcodeChallegesSolved =
+        leetcodeStats.data.matchedUser.submitStatsGlobal.acSubmissionNum[0].count;
+
+      console.log(leetcodeChallegesSolved);
+      codeChallengeStats["leetcode"] = leetcodeChallegesSolved;
+    } catch (error) {
+      codeChallengeStats["leetcode"] = "170+";
+      console.log(error);
+    }
+
+    return {
+      props: {
+        codeChallengeStats,
+      },
+    };
+  } catch (error) {
+    console.log(error);
+  }
+}
