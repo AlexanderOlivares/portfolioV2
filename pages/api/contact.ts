@@ -29,16 +29,16 @@ export default async function handler(req,res){
             `
         };
 
-        transporter.sendMail(mailOptions, (error, info) => {
+        await transporter.sendMail(mailOptions, (error, info) => {
             if (error) {
               console.log(error);
               res.status(500).json({ message: "Error sending email..." });
             } else {
               console.log("Email sent: " + info.response);
+              res.status(200).json({ message: "Email sent successfully. I'll get back to you soon. - Alex"});
             }
         });
 
-        res.status(200).json({ message: "Email sent successfully. I'll get back to you soon. - Alex"});
         
     } catch (error) {
         console.log(error);    
