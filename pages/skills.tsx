@@ -1,14 +1,29 @@
 import React from "react";
 import ChallengeSiteCard from "../components/ChallengeSiteCard";
-import challengeSiteConent from "../content/challengSitesContent";
+import challengeSiteContent from "../content/challengSitesContent";
 import Head from "next/head";
 import Link from "next/link";
 import { GoChevronUp } from "react-icons/go";
 import pool from "../db/db";
 import { leetcodeGraphqlQuery } from "../db/leetcodeGraphqlQuery";
 
-export default function Skills({ codeChallengeStats }) {
-  console.log(codeChallengeStats);
+export default function Skills(props) {
+  if (!props.dbQueryFailure) {
+    const { codeChallengeStats } = props;
+    challengeSiteContent.forEach(challengeSite => {
+      if (challengeSite.site == "Codewars") {
+        challengeSite.solved = codeChallengeStats.db?.codewars_completed;
+        challengeSite.shortDescrip = `Honor percentile: ${codeChallengeStats.db?.codewars_honor}`;
+      }
+      if (challengeSite.site == "Edabit") {
+        challengeSite.shortDescrip = `${codeChallengeStats.db?.edabit_xp} XP`;
+      }
+      if (challengeSite.site == "Leetcode") {
+        challengeSite.solved = codeChallengeStats.leetcode;
+      }
+    });
+  }
+
   return (
     <>
       <Head>
@@ -63,7 +78,7 @@ export default function Skills({ codeChallengeStats }) {
         </div>
         <div className="md:ml-12 bg-tan text-emerald">
           <div className="flex justify-center items-center min-h-screen md:pb-36 min-w-6/12 flex-wrap">
-            {challengeSiteConent.map(site => {
+            {challengeSiteContent.map(site => {
               return (
                 <div
                   key={site.site}
@@ -110,7 +125,6 @@ export async function getServerSideProps() {
     };
 
     try {
-      console.log("hi");
       const getLeetcodeStats = await fetch(
         "https://leetcode.com/graphql/",
         requestOptions
@@ -133,5 +147,10 @@ export async function getServerSideProps() {
     };
   } catch (error) {
     console.log(error);
+    return {
+      props: {
+        dbQueryFailure: true,
+      },
+    };
   }
 }
