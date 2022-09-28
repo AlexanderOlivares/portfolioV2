@@ -11,14 +11,14 @@ import {
 import { GrLinkedin } from "react-icons/gr";
 import Image from "next/image";
 import headshot from "../public/images/headshot.jpeg";
-import skillIconNameLookup, { skillIcons } from "../content/skillIcons";
+import { skillIconNameLookup, skillIcons } from "../content/skillIcons";
 import useMediaQuery from "../utils/UseMediaQuery";
 import externalLinks from "../content/externalLinkContent";
 
 const IndexPage = () => {
   const isWideScreen = useMediaQuery("(min-width:2000px)");
   const isMobile = useMediaQuery("(max-width:775px)");
-  const [tooltip, setTooltip] = useState("these technologies");
+  const [tooltip, setTooltip] = useState<string>("these technologies");
 
   return (
     <>
@@ -94,7 +94,9 @@ const IndexPage = () => {
               <span className="text-2xl md:text-3xl">I create web apps with</span>
             </div>
             <div className="text-center">
-              <span className="text-2xl md:text-3xl">{tooltip}</span>
+              <span className="text-2xl md:text-3xl">
+                {tooltip ? tooltip : "these technologies"}
+              </span>
             </div>
             <div className="flex flex-wrap justify-evenly">
               {skillIcons.map((Icon, i) => {
@@ -102,9 +104,10 @@ const IndexPage = () => {
                   <span
                     key={i}
                     className="m-1 p-2 border-2  bg-tan text-emerald hover:bg-emerald hover:border-3 hover:border-yellow hover:text-tan hover:origin-top-left"
-                    onMouseOver={() =>
-                      setTooltip(skillIconNameLookup[Icon.name.toString().slice(2)])
-                    }
+                    onMouseOver={() => {
+                      const readableName: string = Icon.name.toString();
+                      setTooltip(skillIconNameLookup[readableName.slice(2)]);
+                    }}
                   >
                     <Icon size={isMobile ? 55 : isWideScreen ? 130 : 75} />
                   </span>
