@@ -101,18 +101,16 @@ const IndexPage = () => {
               <span className="text-2xl md:text-3xl">{tooltip}</span>
             </div>
             <div className="flex flex-wrap justify-evenly">
-              {skillIcons.map(Icon => {
+              {skillIcons.map((Icon, i) => {
                 return (
-                  <span className="m-1 p-2 border-2  bg-tan text-emerald hover:bg-emerald hover:border-3 hover:border-yellow hover:text-tan hover:origin-top-left">
+                  <span
+                    key={i}
+                    className="m-1 p-2 border-2  bg-tan text-emerald hover:bg-emerald hover:border-3 hover:border-yellow hover:text-tan hover:origin-top-left"
+                  >
                     <Icon
-                      //   onMouseEnter={() => setTooltip(skillIconNameLookup[Icon.name.slice(2)])}
                       onMouseEnter={() => {
                         console.log("onMouseEnter");
-                        console.log(Icon.name);
-                        console.log(Icon.name.slice(2));
-                        console.log(`tooltip: ${tooltip}`);
-                        console.log(typeof skillIconNameLookup[Icon.name.slice(2)]);
-                        displayIconNameOnHover(skillIconNameLookup[Icon.name.slice(2)]);
+                        setTooltip(skillIconNameLookup[Icon.name.toString().slice(2)]);
                       }}
                       size={isMobile ? 55 : isWideScreen ? 130 : 75}
                     />
