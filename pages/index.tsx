@@ -19,6 +19,8 @@ const IndexPage = () => {
   const isWideScreen = useMediaQuery("(min-width:2000px)");
   const isMobile = useMediaQuery("(max-width:775px)");
   const [tooltip, setTooltip] = useState<string>("these technologies");
+  console.log(skillIconNameLookup);
+  console.log(skillIcons);
 
   const handleIconDisplayName = (iconName: string): string => {
     const readableIconName = skillIconNameLookup[iconName.slice(2)];
@@ -108,7 +110,7 @@ const IndexPage = () => {
                   <span
                     key={i}
                     className="m-1 p-2 border-2  bg-tan text-emerald hover:bg-emerald hover:border-3 hover:border-yellow hover:text-tan hover:origin-top-left"
-                    onMouseOver={() => handleIconDisplayName(Icon.name)}
+                    onMouseEnter={() => handleIconDisplayName(Icon.name)}
                   >
                     <Icon size={isMobile ? 55 : isWideScreen ? 130 : 75} />
                   </span>
