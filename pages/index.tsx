@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import Head from "next/head";
 import {
@@ -19,6 +19,14 @@ const IndexPage = () => {
   const isWideScreen = useMediaQuery("(min-width:2000px)");
   const isMobile = useMediaQuery("(max-width:775px)");
   const [tooltip, setTooltip] = useState<string>("these technologies");
+
+  const handleToolTip = (iconName: string) => {
+    setTooltip(skillIconNameLookup[iconName.slice(2)]);
+  };
+
+  useEffect(() => {
+    setTooltip(tooltip);
+  }, [tooltip]);
 
   return (
     <>
@@ -95,7 +103,8 @@ const IndexPage = () => {
             </div>
             <div className="text-center">
               <span className="text-2xl md:text-3xl">
-                {tooltip ? tooltip : "these technologies"}
+                {/* {tooltip ? tooltip : "these technologies"} */}
+                {tooltip}
               </span>
             </div>
             <div className="flex flex-wrap justify-evenly">
@@ -104,10 +113,7 @@ const IndexPage = () => {
                   <span
                     key={i}
                     className="m-1 p-2 border-2  bg-tan text-emerald hover:bg-emerald hover:border-3 hover:border-yellow hover:text-tan hover:origin-top-left"
-                    onMouseOver={() => {
-                      const readableName: string = Icon.name.toString();
-                      setTooltip(skillIconNameLookup[readableName.slice(2)]);
-                    }}
+                    onMouseOver={() => handleToolTip(Icon.name)}
                   >
                     <Icon size={isMobile ? 55 : isWideScreen ? 130 : 75} />
                   </span>
