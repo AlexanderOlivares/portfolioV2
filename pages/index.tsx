@@ -20,13 +20,11 @@ const IndexPage = () => {
   const isMobile = useMediaQuery("(max-width:775px)");
   const [tooltip, setTooltip] = useState<string>("these technologies");
 
-  const handleToolTip = (iconName: string) => {
-    setTooltip(skillIconNameLookup[iconName.slice(2)]);
+  const handleIconDisplayName = (iconName: string): string => {
+    const readableIconName = skillIconNameLookup[iconName.slice(2)];
+    setTooltip(readableIconName);
+    return readableIconName;
   };
-
-  useEffect(() => {
-    setTooltip(tooltip);
-  }, [tooltip]);
 
   return (
     <>
@@ -102,10 +100,7 @@ const IndexPage = () => {
               <span className="text-2xl md:text-3xl">I create web apps with</span>
             </div>
             <div className="text-center">
-              <span className="text-2xl md:text-3xl">
-                {/* {tooltip ? tooltip : "these technologies"} */}
-                {tooltip}
-              </span>
+              <span className="text-2xl md:text-3xl">{tooltip}</span>
             </div>
             <div className="flex flex-wrap justify-evenly">
               {skillIcons.map((Icon, i) => {
@@ -113,7 +108,7 @@ const IndexPage = () => {
                   <span
                     key={i}
                     className="m-1 p-2 border-2  bg-tan text-emerald hover:bg-emerald hover:border-3 hover:border-yellow hover:text-tan hover:origin-top-left"
-                    onMouseOver={() => handleToolTip(Icon.name)}
+                    onMouseOver={() => handleIconDisplayName(Icon.name)}
                   >
                     <Icon size={isMobile ? 55 : isWideScreen ? 130 : 75} />
                   </span>
