@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import Head from "next/head";
 import {
@@ -18,14 +18,12 @@ import externalLinks from "../content/externalLinkContent";
 const IndexPage = () => {
   const isWideScreen = useMediaQuery("(min-width:2000px)");
   const isMobile = useMediaQuery("(max-width:775px)");
-  const [tooltip, setTooltip] = useState<string>("these technologies");
+  const [iconDisplayName, setIconDisplayName] = useState<string>(skillIconNameLookup[0]);
   console.log(skillIconNameLookup);
   console.log(skillIcons);
 
-  const handleIconDisplayName = (iconName: string): string => {
-    const readableIconName = skillIconNameLookup[iconName.slice(2)];
-    setTooltip(readableIconName);
-    return readableIconName;
+  const handleIconDisplayName = (index: number) => {
+    setIconDisplayName(skillIconNameLookup[index + 1]);
   };
 
   return (
@@ -102,15 +100,15 @@ const IndexPage = () => {
               <span className="text-2xl md:text-3xl">I create web apps with</span>
             </div>
             <div className="text-center">
-              <span className="text-2xl md:text-3xl">{tooltip}</span>
+              <span className="text-2xl md:text-3xl">{iconDisplayName}</span>
             </div>
             <div className="flex flex-wrap justify-evenly">
-              {skillIcons.map((Icon, i) => {
+              {skillIcons.map((Icon, index) => {
                 return (
                   <span
-                    key={i}
+                    key={index}
                     className="m-1 p-2 border-2  bg-tan text-emerald hover:bg-emerald hover:border-3 hover:border-yellow hover:text-tan hover:origin-top-left"
-                    onMouseEnter={() => handleIconDisplayName(Icon.name)}
+                    onMouseEnter={() => handleIconDisplayName(index)}
                   >
                     <Icon size={isMobile ? 55 : isWideScreen ? 130 : 75} />
                   </span>
