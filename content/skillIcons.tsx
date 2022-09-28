@@ -36,7 +36,7 @@ export const skillIcons: IconType[] = [
   SiCss3,
 ];
 
-export const skillIconNameLookup = {
+const skillIconNameLookup = {
   NodeJs: "Node.js",
   JsSquare: "JavaScript",
   React: "React",
@@ -55,3 +55,5 @@ export const skillIconNameLookup = {
   Html5: "HTML5",
   Css3: "CSS3",
 };
+
+export default skillIconNameLookup;

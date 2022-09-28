@@ -11,7 +11,7 @@ import {
 import { GrLinkedin } from "react-icons/gr";
 import Image from "next/image";
 import headshot from "../public/images/headshot.jpeg";
-import { skillIcons, skillIconNameLookup } from "../content/skillIcons";
+import skillIconNameLookup, { skillIcons } from "../content/skillIcons";
 import useMediaQuery from "../utils/UseMediaQuery";
 import externalLinks from "../content/externalLinkContent";
 
