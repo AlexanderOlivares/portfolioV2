@@ -30,6 +30,11 @@ const IndexPage = () => {
         <title>Alex Olivares Portfolio</title>
         <meta property="og:title" content="Alex Olivares Web Dev Portfolio Homepage" key="title" />
         <meta name="description" content="Alex Olivares Web Dev Portfolio Homepage" />
+        <meta
+          name="image"
+          property="og:image"
+          content="https://live.staticflickr.com/65535/52390834105_3f4a1fefd5_k.jpg"
+        />
       </Head>
       <div className="relative md:flex">
         <div className="md:h-screen w-full flex flex-wrap justify-evenly content-center">
