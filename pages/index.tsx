@@ -18,11 +18,7 @@ import externalLinks from "../content/externalLinkContent";
 const IndexPage = () => {
   const isWideScreen = useMediaQuery("(min-width:2000px)");
   const isMobile = useMediaQuery("(max-width:775px)");
-  const [tooltip, setTooltip] = useState<string>("these technologies");
-
-  const displayIconNameOnHover = (iconName: string) => {
-    setTooltip(iconName);
-  };
+  const [tooltip, setTooltip] = useState("these technologies");
 
   return (
     <>
@@ -107,7 +103,7 @@ const IndexPage = () => {
                     key={i}
                     className="m-1 p-2 border-2  bg-tan text-emerald hover:bg-emerald hover:border-3 hover:border-yellow hover:text-tan hover:origin-top-left"
                     onMouseOver={() =>
-                      displayIconNameOnHover(skillIconNameLookup[Icon.name.toString().slice(2)])
+                      setTooltip(skillIconNameLookup[Icon.name.toString().slice(2)])
                     }
                   >
                     <Icon size={isMobile ? 55 : isWideScreen ? 130 : 75} />

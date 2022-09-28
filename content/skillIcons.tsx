@@ -13,12 +13,12 @@ import {
   SiCss3,
   SiTailwindcss,
   SiNextdotjs,
-  SiJest
+  SiJest,
 } from "react-icons/si";
 
 export const skillIcons: IconType[] = [
   FaNodeJs,
-//   FaJsSquare,
+  //   FaJsSquare,
   FaReact,
   SiTypescript,
   FaPython,
@@ -36,11 +36,10 @@ export const skillIcons: IconType[] = [
   SiCss3,
 ];
 
-
 export const skillIconNameLookup = {
   NodeJs: "Node.js",
   JsSquare: "JavaScript",
-  React: "React", 
+  React: "React",
   Typescript: "TypeScript",
   Python: "Python",
   Postgresql: "PostgreSQL",
@@ -51,8 +50,8 @@ export const skillIconNameLookup = {
   Express: "Express.js",
   Styledcomponents: "Styled Components",
   Tailwindcss: "Tailwind CSS",
-  Nextdotjs: "Next.js", 
+  Nextdotjs: "Next.js",
   Jest: "Jest",
   Html5: "HTML5",
-  Css3: "CSS3"
+  Css3: "CSS3",
 };
