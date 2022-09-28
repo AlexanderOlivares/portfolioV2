@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import Head from "next/head";
 import {
@@ -20,19 +20,16 @@ const IndexPage = () => {
   const isMobile = useMediaQuery("(max-width:775px)");
   const [tooltip, setTooltip] = useState<string>("these technologies");
 
+  const displayIconNameOnHover = (iconName: string) => {
+    setTooltip(iconName);
+  };
+
   return (
     <>
       <Head>
         <title>Alex Olivares Portfolio</title>
-        <meta
-          property="og:title"
-          content="Alex Olivares Web Dev Portfolio Homepage"
-          key="title"
-        />
-        <meta
-          name="description"
-          content="Alex Olivares Web Dev Portfolio Homepage"
-        />
+        <meta property="og:title" content="Alex Olivares Web Dev Portfolio Homepage" key="title" />
+        <meta name="description" content="Alex Olivares Web Dev Portfolio Homepage" />
       </Head>
       <div className="relative md:flex">
         <div className="md:h-screen w-full flex flex-wrap justify-evenly content-center">
@@ -45,11 +42,7 @@ const IndexPage = () => {
                 <span className="text-5xl md:text-6xl">Alex Olivares</span>
               </div>
               <div className="m-1 drop-shadow-xl">
-                <Image
-                  className="rounded-md"
-                  src={headshot}
-                  alt="alex olivares headshot"
-                />
+                <Image className="rounded-md" src={headshot} alt="alex olivares headshot" />
               </div>
               <div className="text-center mt-3">
                 <p className="text-5xl md:text-6xl m-auto">Web Developer</p>
@@ -57,20 +50,14 @@ const IndexPage = () => {
               <div className="flex justify-center mt-1">
                 <span className="m-4 shadow-2xl">
                   <Link href={externalLinks.github}>
-                    <a
-                      aria-label="link to alex olivares github profile"
-                      target="_blank"
-                    >
+                    <a aria-label="link to alex olivares github profile" target="_blank">
                       <GoMarkGithub size={50} />
                     </a>
                   </Link>
                 </span>
                 <span className="m-4 shadow-2xl shadow-emerald">
                   <Link href={externalLinks.linkedin}>
-                    <a
-                      aria-label="link to alex olivares linkedin profile"
-                      target="_blank"
-                    >
+                    <a aria-label="link to alex olivares linkedin profile" target="_blank">
                       <GrLinkedin size={50} />
                     </a>
                   </Link>
@@ -118,10 +105,11 @@ const IndexPage = () => {
                 return (
                   <span className="m-1 p-2 border-2  bg-tan text-emerald hover:bg-emerald hover:border-3 hover:border-yellow hover:text-tan hover:origin-top-left">
                     <Icon
-                      //   onMouseEnter={() => console.log(Icon.name)}
-                      onMouseEnter={() =>
-                        setTooltip(skillIconNameLookup[Icon.name.slice(2)])
-                      }
+                      //   onMouseEnter={() => setTooltip(skillIconNameLookup[Icon.name.slice(2)])}
+                      onMouseEnter={() => {
+                        console.log("onMouseEnter");
+                        displayIconNameOnHover(skillIconNameLookup[Icon.name.slice(2)]);
+                      }}
                       size={isMobile ? 55 : isWideScreen ? 130 : 75}
                     />
                   </span>
@@ -130,9 +118,8 @@ const IndexPage = () => {
             </div>
             <div className="p-3 text-center">
               <span className="text-2xl md:text-base">
-                All of my projects were created for practical use and are actively
-                used by myself and others. I enjoy creating websites that make life
-                easier and more convienient.
+                All of my projects were created for practical use and are actively used by myself
+                and others. I enjoy creating websites that make life easier and more convienient.
               </span>
             </div>
             <div className="text-center mt-4">

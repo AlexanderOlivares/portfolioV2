@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Menu, Transition } from "@headlessui/react";
 import { navContent } from "../content/navContent";
 import Link from "next/link";
-import { GoKebabHorizontal, GoKebabVertical } from "react-icons/go";
+import { GoKebabHorizontal } from "react-icons/go";
 import { GoMarkGithub } from "react-icons/go";
 import { GrLinkedin } from "react-icons/gr";
 import externalLinks from "../content/externalLinkContent";
@@ -34,11 +34,7 @@ const MobileNav: React.FC<IMoblieNavProps> = ({ navExpand, setNavExpand }) => {
               onClick={handleKebabClick}
               onAnimationEnd={() => setAnimateMenuIcon(false)}
             >
-              {navExpand ? (
-                <GoKebabVertical size={36} />
-              ) : (
-                <GoKebabHorizontal size={36} />
-              )}
+              <GoKebabHorizontal size={36} />
             </div>
           </Menu.Button>
         </div>
