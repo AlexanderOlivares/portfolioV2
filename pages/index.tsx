@@ -108,6 +108,10 @@ const IndexPage = () => {
                       //   onMouseEnter={() => setTooltip(skillIconNameLookup[Icon.name.slice(2)])}
                       onMouseEnter={() => {
                         console.log("onMouseEnter");
+                        console.log(Icon.name);
+                        console.log(Icon.name.slice(2));
+                        console.log(`tooltip: ${tooltip}`);
+                        console.log(typeof skillIconNameLookup[Icon.name.slice(2)]);
                         displayIconNameOnHover(skillIconNameLookup[Icon.name.slice(2)]);
                       }}
                       size={isMobile ? 55 : isWideScreen ? 130 : 75}
