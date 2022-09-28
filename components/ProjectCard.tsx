@@ -22,16 +22,10 @@ const ProjectCard: React.FC<IProjectCardProps> = ({ project }) => {
   const togglePhoto = () => setShowDescription(!showDescription);
 
   return (
-    <div className="py-3 bg-emerald text-tan shadow-2xl shadow-emerald rounded-md">
-      <div className="text-2xl mb-2 lg:text-3xl m-auto text-center">
-        {project.title}
-      </div>
+    <div className="py-3 bg-emerald text-tan shadow-lg shadow-emerald rounded-md">
+      <div className="text-2xl mb-2 lg:text-3xl m-auto text-center">{project.title}</div>
       <div onClick={togglePhoto} className="w-96 h-52 cursor-pointer ">
-        <div
-          className={`bg-tan text-emerald  w-96 h-52  ${
-            showDescription && "overflow-y-auto"
-          }`}
-        >
+        <div className={`bg-tan text-emerald  w-96 h-52  ${showDescription && "overflow-y-auto"}`}>
           {!showDescription && (
             <Image src={project.img} alt={project.title} width="384" height="208" />
           )}
@@ -44,7 +38,7 @@ const ProjectCard: React.FC<IProjectCardProps> = ({ project }) => {
             leaveFrom="opacity-0 rotate-0 scale-50"
             leaveTo="opacity-0 scale-0"
           >
-            <div className="p-2 ">{project.longDescrip}</div>
+            <div className="p-4 ">{project.longDescrip}</div>
           </Transition>
         </div>
       </div>
