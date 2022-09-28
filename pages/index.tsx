@@ -106,14 +106,11 @@ const IndexPage = () => {
                   <span
                     key={i}
                     className="m-1 p-2 border-2  bg-tan text-emerald hover:bg-emerald hover:border-3 hover:border-yellow hover:text-tan hover:origin-top-left"
+                    onMouseOver={() =>
+                      displayIconNameOnHover(skillIconNameLookup[Icon.name.toString().slice(2)])
+                    }
                   >
-                    <Icon
-                      onMouseEnter={() => {
-                        console.log("onMouseEnter");
-                        setTooltip(skillIconNameLookup[Icon.name.toString().slice(2)]);
-                      }}
-                      size={isMobile ? 55 : isWideScreen ? 130 : 75}
-                    />
+                    <Icon size={isMobile ? 55 : isWideScreen ? 130 : 75} />
                   </span>
                 );
               })}
