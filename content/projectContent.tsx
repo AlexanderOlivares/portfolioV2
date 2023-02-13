@@ -6,9 +6,27 @@ import {
   SiMaterialui,
   SiBootstrap,
   SiCss3,
+  SiNextdotjs,
 } from "react-icons/si";
 
 let projectData = [
+  {
+    Icons: [
+      <SiNextdotjs size={50} />,
+      <SiTypescript size={50} />,
+      <SiPostgresql size={50} />,
+      <SiMaterialui size={50} />,
+    ],
+    language: "TypeScript",
+    title: "Golf Logs",
+    subHeader: "Next.js | TypeScript | PostgreSQL | MUI",
+    img: "/images/canvaGolflogs.png",
+    repoUrl: "https://github.com/AlexanderOlivares/golf-stat-tracker",
+    demo: "https://golf-stat-tracker.vercel.app/",
+    shortDescrip: "",
+    longDescrip:
+      "A golf stat tracking app to record scores and swing data. Users enter club used, distance to pin, and shot result for every strok. Golf Logs shows users their strengths and weaknesses on the course to help improve their game.",
+  },
   {
     Icons: [
       <FaPython size={50} />,
@@ -54,7 +72,7 @@ let projectData = [
       <SiBootstrap size={50} />,
     ],
     language: "Node",
-    title: "Sidebar List",
+    title: "Co-editable List",
     subHeader: "PostgreSQL | Express | React | Node.js | JWT | REST api | Bootstrap | EmailJS",
     img: "/images/sidebar.png",
     repoUrl: "https://github.com/AlexanderOlivares/sidebar-list",
@@ -76,31 +94,31 @@ let projectData = [
     longDescrip:
       "Virtual bookshelf is place to display your collection of audiobooks or e-books on a single shelf. The book search is powered by the Google Books API. The NYT Besteller List API shows you the most popular books on the homepage. EmailJS lets you email your shelf to friends. Login with username/password or sign-in with Google.",
   },
-  {
-    Icons: [<FaJsSquare size={50} />, <SiCss3 size={50} />],
-    language: "JavaScript",
-    title: "Widget Grid",
-    subHeader: "Vanilla JavaScript | CSS",
-    img: "/images/wg.png",
-    repoUrl: "https://github.com/AlexanderOlivares/Widget-Grid",
-    demo: "https://alexanderolivares.github.io/Widget-Grid/",
-    shortDescrip: "Four-in-one widget app",
-    longDescrip:
-      "It's a weather app, notepad, pomodoro timer and calculator all wrapped into one project. The weather app uses the OpenWeatherMap API and works for all U.S. cities. It's a handy productivity tool to keep on a secondary monitor.",
-  },
-  {
-    Icons: [<FaJsSquare size={50} />, <SiBootstrap size={50} />],
-    language: "JavaScript",
-    title: "TV Countdown Timer",
-    subHeader: "Vanilla JavaScript | Bootstrap",
-    img: "/images/timer.png",
-    repoUrl: "https://github.com/AlexanderOlivares/tvTimer",
-    demo: "https://alexanderolivares.github.io/tvTimer/",
-    shortDescrip:
-      "A voiced countdown timer for TV news producers and directors that utilizes the ResponsiveVoice Text To Speech API",
-    longDescrip:
-      "Back when I worked in local TV news, our production control room timing device broke. I quickly created this app to help time news segments and countdown our anchors/reporters during commercial breaks. I added a delay setting to accurately countdown field reporters who hear everything on a 2-7 second delay in their earpiece. This app is used daily at CBS Austin to time shows and recordings.",
-  },
+  //   {
+  //     Icons: [<FaJsSquare size={50} />, <SiCss3 size={50} />],
+  //     language: "JavaScript",
+  //     title: "Widget Grid",
+  //     subHeader: "Vanilla JavaScript | CSS",
+  //     img: "/images/wg.png",
+  //     repoUrl: "https://github.com/AlexanderOlivares/Widget-Grid",
+  //     demo: "https://alexanderolivares.github.io/Widget-Grid/",
+  //     shortDescrip: "Four-in-one widget app",
+  //     longDescrip:
+  //       "It's a weather app, notepad, pomodoro timer and calculator all wrapped into one project. The weather app uses the OpenWeatherMap API and works for all U.S. cities. It's a handy productivity tool to keep on a secondary monitor.",
+  //   },
+  //   {
+  //     Icons: [<FaJsSquare size={50} />, <SiBootstrap size={50} />],
+  //     language: "JavaScript",
+  //     title: "TV Countdown Timer",
+  //     subHeader: "Vanilla JavaScript | Bootstrap",
+  //     img: "/images/timer.png",
+  //     repoUrl: "https://github.com/AlexanderOlivares/tvTimer",
+  //     demo: "https://alexanderolivares.github.io/tvTimer/",
+  //     shortDescrip:
+  //       "A voiced countdown timer for TV news producers and directors that utilizes the ResponsiveVoice Text To Speech API",
+  //     longDescrip:
+  //       "Back when I worked in local TV news, our production control room timing device broke. I quickly created this app to help time news segments and countdown our anchors/reporters during commercial breaks. I added a delay setting to accurately countdown field reporters who hear everything on a 2-7 second delay in their earpiece. This app is used daily at CBS Austin to time shows and recordings.",
+  //   },
 ];
 
 export default projectData;
