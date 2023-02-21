@@ -46,18 +46,12 @@ const Contact = () => {
     <>
       <Head>
         <title>Contact - Alex Olivares Porfolio</title>
-        <meta
-          property="og:title"
-          content="Contact me directly - Alex Olivares"
-          key="title"
-        />
+        <meta property="og:title" content="Contact me directly - Alex Olivares" key="title" />
         <meta name="description" content="Contact Alex Olivares" />
       </Head>
       <div className="flex h-screen justify-center md:items-center">
         <div className="w-full text-center max-w-sm p-1 md:max-w-4xl lg:-mt-24">
-          <div className="text-emerald text-center md:pt-10 pb-12 text-6xl">
-            Contact Me
-          </div>
+          <div className="text-emerald text-center md:pt-10 pb-12 text-6xl">Contact Me</div>
           <form
             onSubmit={handleFormSubmit}
             className="bg-emerald shadow-2xl rounded px-4 md:px-12 pt-6 pb-8 mb-4"
@@ -113,7 +107,7 @@ const Contact = () => {
               </button>
             </div>
           </form>
-          <p className="text-center text-xs">Powered by nodemailer</p>
+          {/* <p className="text-center text-xs">Powered by nodemailer</p> */}
         </div>
       </div>
     </>
