@@ -24,6 +24,11 @@ const IndexPage = () => {
     setIconDisplayName(skillIconNameLookup[index + 1]);
   };
 
+  function downloadPDF() {
+    const pdfUrl = process.env.NEXT_PUBLIC_PORTFOLIO_LINK;
+    window.open(pdfUrl, "_blank");
+  }
+
   return (
     <>
       <Head>
@@ -70,6 +75,7 @@ const IndexPage = () => {
               </div>
               <div className="text-center mt-2">
                 <button
+                  onClick={downloadPDF}
                   aria-label="download alex olivares resume"
                   className="flex items-center shadow-2xl shadow-emerald text-xl m-auto p-2 bg-emerald text-tan rounded-md"
                 >
