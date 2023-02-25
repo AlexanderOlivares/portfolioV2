@@ -22,7 +22,7 @@ let projectData = [
     subHeader: "Next.js | TypeScript | PostgreSQL | MUI",
     img: "/images/golfLogsPortfolioV2.png",
     repoUrl: "https://github.com/AlexanderOlivares/golf-stat-tracker",
-    demo: "https://golf-stat-tracker.vercel.app/",
+    demo: "https://golflogs.vercel.app/",
     shortDescrip: "",
     longDescrip:
       "A golf stat tracking app to record scores and swing data. Users enter club used, distance to pin, and shot result for every strok. Golf Logs shows users their strengths and weaknesses on the course to help improve their game.",
